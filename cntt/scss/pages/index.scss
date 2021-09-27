@@ -27,6 +27,7 @@ body {
                 color: #707974;
                 display: block;
                 transition: 0.3s;
+                font-family: 'Maven Pro', sans-serif;
     
                 &:hover {
                     color: #fff;
@@ -81,7 +82,8 @@ body {
             margin: 0 auto;
             height: 400px;
             perspective: 1000px;
-            display: none;
+            position: relative;
+            transition: 2s;
 
             .content{
                 margin: auto;
@@ -201,6 +203,7 @@ body {
     
                         &.dot-red {
                             background-color: #ff6d6d;
+                            cursor: pointer;
                         }
     
                         &.dot-yellow {

@@ -9,16 +9,28 @@ function closeNav() {
     //document.getElementById("main").style.marginLeft= "0";
     document.body.style.opacity = "1";
 }
+
+function hideSlideshow() {
+    document.getElementById("slideshow").style.bottom = "-500px";
+}
+function showSlideshow() {
+    document.getElementById("slideshow").style.bottom = "0";
+}
+
 function closeLogin() {
     document.getElementById("loginForm").style.top = "-1200px";
     document.getElementById("loginForm").style.zIndex = "0";
-    closeNav();
+    if(document.getElementById("registerForm").style.top == "-700px") {
+        showSlideshow();
+    }
 }
 
 function closeRegister() {
     document.getElementById("registerForm").style.top = "-700px";
     document.getElementById("registerForm").style.zIndex = "0";
-    closeNav();
+    if(document.getElementById("loginForm").style.top == "-1200px") {
+        showSlideshow();
+    }
 }
 
 function openLogin() {
@@ -26,6 +38,7 @@ function openLogin() {
     document.getElementById("loginForm").style.zIndex = "1";
     closeRegister();
     closeNav();
+    hideSlideshow();
 }
 
 function openRegister() {
@@ -33,4 +46,5 @@ function openRegister() {
     document.getElementById("registerForm").style.zIndex = "1";
     closeLogin();
     closeNav();
+    hideSlideshow();
 }

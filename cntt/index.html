@@ -22,26 +22,10 @@
             <span class="nav-open" onclick="openNav()">&#9776</span>
         </div>
         <h1 class="title">VT-GAME</h1>
-        <section class="slideshow">
-            <div class="content">
-                <div class="slider-content">
-                    <figure class="shadow"><img src="./images/game/4566_uhd-4k-wallpaper-06.jpg"></figure>
-                    <figure class="shadow"><img src="./images/game/Flappy_Bird_ZIVE.jpg"></figure>
-                    <figure class="shadow"><img src="./images/game/maxresdefault.jpg"></figure>
-                    <figure class="shadow"><img src="./images/game/space-game-background-neon-night-alien-landscape_107791-1624.jpg"></figure>
-                    <figure class="shadow"><img src="./images/game/tro-choi-pacman.jpg"></figure>
-                    <figure class="shadow"><img src="./images/game/4566_uhd-4k-wallpaper-06.jpg"></figure>
-                    <figure class="shadow"><img src="./images/game/Flappy_Bird_ZIVE.jpg"></figure>
-                    <figure class="shadow"><img src="./images/game/maxresdefault.jpg"></figure>
-                    <figure class="shadow"><img src="./images/game/space-game-background-neon-night-alien-landscape_107791-1624.jpg"></figure>
-                    <figure class="shadow"><img src="./images/game/tro-choi-pacman.jpg"></figure>
-                </div>
-            </div>
-        </section>
         <div class="login-register">
             <section class="form" id="registerForm">
                 <div class="form-header">
-                    <span class="dot dot-red"></span>
+                    <span class="dot dot-red" onclick="closeRegister()"></span>
                     <span class="dot dot-yellow"></span>
                     <span class="dot dot-green"></span>
                     <h2>Create Account</h2>
@@ -67,7 +51,7 @@
             </section>
             <section class="form" id="loginForm">
                 <div class="form-header">
-                    <span class="dot dot-red"></span>
+                    <span class="dot dot-red" onclick="closeLogin()"></span>
                     <span class="dot dot-yellow"></span>
                     <span class="dot dot-green"></span>
                     <h2>Create Account</h2>
@@ -88,6 +72,22 @@
                 <button type="submit" class="btn">Login</button>
             </section>
         </div>
+        <section class="slideshow" id="slideshow">
+            <div class="content">
+                <div class="slider-content">
+                    <figure class="shadow"><img src="./images/game/4566_uhd-4k-wallpaper-06.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/Flappy_Bird_ZIVE.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/maxresdefault.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/space-game-background-neon-night-alien-landscape_107791-1624.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/tro-choi-pacman.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/4566_uhd-4k-wallpaper-06.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/Flappy_Bird_ZIVE.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/maxresdefault.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/space-game-background-neon-night-alien-landscape_107791-1624.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/tro-choi-pacman.jpg"></figure>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 <script src="index.js"></script>
