@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VT-Game</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Log in</a>
+            <a href="#">Register</a>
+        </div>
+        <div class="options">        
+            <figure class="img muteBtn">
+                <img src="./images/muteicon.png" alt="">
+            </figure>
+            <span class="nav-open" onclick="openNav()">&#9776</span>
+        </div>
+        <h1 class="title">VT-GAME</h1>
+        <section class="slideshow">
+            <div class="content">
+                <div class="slider-content">
+                    <figure class="shadow"><img src="./images/game/4566_uhd-4k-wallpaper-06.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/Flappy_Bird_ZIVE.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/maxresdefault.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/space-game-background-neon-night-alien-landscape_107791-1624.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/tro-choi-pacman.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/4566_uhd-4k-wallpaper-06.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/Flappy_Bird_ZIVE.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/maxresdefault.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/space-game-background-neon-night-alien-landscape_107791-1624.jpg"></figure>
+                    <figure class="shadow"><img src="./images/game/tro-choi-pacman.jpg"></figure>
+                </div>
+            </div>
+        </section>
+        <section class="form">
+            <h2>Create Account</h2>
+
+            <hr>
+            
+            <figure class="img userLogo">
+                <img src="./images/userlogo.png" alt="">
+            </figure>
+
+            <label for="email" class="label"><b>Username</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email" class="input" required>
+        
+            <label for="psw" class="label"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="psw" class="input" required>
+        
+            <label for="psw-repeat" class="label"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" class="input" required>
+
+            <button type="submit" class="registerBtn">Register</button>
+        </section>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

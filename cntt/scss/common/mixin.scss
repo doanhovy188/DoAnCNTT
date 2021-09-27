@@ -1,0 +1,19 @@
+@mixin phoneRes {
+    @media (max-width: 480px) {
+        @content;
+    }
+}
+@mixin tabletRes {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+@mixin laptopRes {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin fontSize($value) {
+    font-size: ($value*4/3) + px;
+}

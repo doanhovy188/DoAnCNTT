@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Maven+Pro:wght@700&display=swap');
+body {
+    margin: 0px;
+    height: 100vh;;
+    display: flex;
+    flex-direction: column;
+
+    .container {
+        padding: 0px 50px; 
+        margin: 0px auto;
+
+        @include laptopRes {
+            padding: 0px 40px;
+        }
+
+        @include tabletRes {
+            padding: 0px 30px;
+        }
+
+        @include phoneRes {
+            padding: 0px 20px;
+        }
+    }
+}
+
