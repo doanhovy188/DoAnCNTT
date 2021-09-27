@@ -4,6 +4,7 @@ body {
     background-position: center;
     background-size: cover;
     font-family: tahoma;
+    transition: 1s;
 
     .container {
 
@@ -162,106 +163,138 @@ body {
                 }
             }
         }
-
-        .form {
-            max-width: 250px;
-            margin: 30px auto 0;
-            display: flex;
-            flex-direction: column;
-            border: 5px solid #707974;
-            border-radius: 40px;
-            padding: 0 10px 20px;
-            background-image: linear-gradient(#fff 9%, #ffd0f1 9%);
-
-            .form-header {
+        .login-register {
+            height: 0;
+            #registerForm {
                 position: relative;
-                display: grid;
-                align-items: center;
-                grid-template-columns: 1fr 1fr 1fr 6fr 1fr 1fr 1fr;
-                margin: 10px auto 7px;
-
-                .dot {
-                    height: 15px;
-                    width: 15px;
-                    background-color: #bbb;
-                    border-radius: 50%;
-                    margin: 0 2px;
-
-                    &.dot-red {
-                        background-color: #ff6d6d;
+                top: -700px;
+                transition: 2s;
+            }
+            #loginForm {
+                position: relative;
+                top: -1200px;
+                transition: 2s;
+            }
+            .form {
+                max-width: 250px;
+                margin: 30px auto 0;
+                display: flex;
+                flex-direction: column;
+                border: 5px solid #707974;
+                border-radius: 40px;
+                padding: 0 10px 20px;
+                background-image: linear-gradient(#fff 9%, #ffd0f1 9%);
+    
+                .form-header {
+                    position: relative;
+                    display: grid;
+                    align-items: center;
+                    grid-template-columns: 1fr 1fr 1fr 6fr 1fr 1fr 1fr;
+                    margin: 10px auto 7px;
+    
+                    .dot {
+                        height: 15px;
+                        width: 15px;
+                        background-color: #bbb;
+                        border-radius: 50%;
+                        margin: 0 2px;
+    
+                        &.dot-red {
+                            background-color: #ff6d6d;
+                        }
+    
+                        &.dot-yellow {
+                            background-color: #fffa8c;
+                        }
+    
+                        &.dot-green {
+                            background-color: #9ff7af;
+                        }
                     }
-
-                    &.dot-yellow {
-                        background-color: #fffa8c;
-                    }
-
-                    &.dot-green {
-                        background-color: #9ff7af;
+    
+                    h2 {
+                        text-align: center;
+                        margin: 0;
+                        font-family: 'Maven Pro', sans-serif;
+                        font-size: 15px;
+                        color: #707974;
                     }
                 }
-
-                h2 {
-                    text-align: center;
-                    margin: 0;
+    
+                hr{
+                    color: #707974;
+                    height: 2px;
+                    background-color: #707974;
+                    border: 1px solid #707974;
+                    margin: 0 -11px 10px;
+                }
+    
+                .userLogo {
+                    width: 100px;
+                    margin: 10px auto;
+                    position: relative;
+    
+                    .avtEdit {
+                        border-radius: 50%;
+                        width: 27px;
+                        height: 27px;
+                        padding: 0;
+                        opacity: 0.8;
+                        border: none;
+                        color: #72767b;
+                        box-shadow: 3px 3px #a6a6a6;
+                        cursor: pointer;
+                        position: absolute;
+                        bottom: 10px;
+                        right: 7px;
+    
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+    
+                .input {
+                    display: inline-block;
+                    background-color: #fdfdfd;
+                    width: 70%;
+                    margin: 5px auto 10px;
+                    height: 20px;
+                    border-radius: 20px;
+                    border: none;
+                    padding: 5px 10px;
+                    box-shadow: 3px 5px #a6a6a6;
+    
+                    &:focus {
+                        outline: none;
+                        padding: 7px 12px;
+                    }
+                }
+    
+                .label {
+                    size: 12px;
                     font-family: 'Maven Pro', sans-serif;
-                    font-size: 15px;
                     color: #707974;
                 }
-            }
-
-            hr{
-                color: #707974;
-                height: 2px;
-                background-color: #707974;
-                border: 1px solid #707974;
-                margin: 0 -11px 10px;
-            }
-
-            .userLogo {
-                height: 100px;
-                margin: 0;
-            }
-
-            .input {
-                display: inline-block;
-                background-color: #fdfdfd;
-                width: 70%;
-                margin: 5px auto 10px;
-                height: 20px;
-                border-radius: 20px;
-                border: none;
-                padding: 5px 10px;
-                box-shadow: 5px 5px #a6a6a6;
-
-                &:focus {
-                    outline: none;
-                    padding: 7px 12px;
-                }
-            }
-
-            .label {
-                size: 12px;
-                font-family: 'Maven Pro', sans-serif;
-                color: #707974;
-            }
-
-            .registerBtn {
-                background: none;
-                background-image: url("../../images/drawline.png");
-                background-size: cover;
-                border: none;
-                width: 55%;
-                padding: 10px 20px;
-                margin: 10px auto 0;
-                font-family: 'Bungee', cursive;
-                color: #707974;
-                opacity: 0.8;
-                cursor: pointer;
-
-                &:hover {
-                    width: 60%;
-                    opacity: 1;
-                    padding: 12px 22px;
+    
+                .btn {
+                    background: none;
+                    background-image: url("../../images/drawline.png");
+                    background-size: cover;
+                    border: none;
+                    width: 55%;
+                    padding: 10px 20px;
+                    margin: 10px auto 0;
+                    font-family: 'Bungee', cursive;
+                    color: #707974;
+                    opacity: 0.8;
+                    cursor: pointer;
+    
+                    &:hover {
+                        width: 60%;
+                        opacity: 1;
+                        padding: 12px 22px;
+                    }
                 }
             }
         }
