@@ -43,6 +43,7 @@ body .container {
 body {
   background-image: url(../../images/bg.png);
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   font-family: tahoma;
 }
@@ -104,13 +105,12 @@ body .container .options .muteBtn:hover {
   opacity: 1;
 }
 body .container .title {
-  margin: 0;
+  margin: 20px 0 0;
   font-family: "Bungee Shade", cursive;
   text-align: center;
   font-size: 70px;
-  position: relative;
-  top: -20px;
   color: #707974;
+  line-height: 1;
 }
 body .container .slideshow {
   margin: 0 auto;
@@ -223,7 +223,7 @@ body .container .slideshow .content .slider-content .shadow img:hover {
 }
 body .container .form {
   max-width: 250px;
-  margin: 0 auto;
+  margin: 30px auto 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -237,11 +237,39 @@ body .container .form {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(9%, #fff), color-stop(9%, #ffd0f1));
   background-image: linear-gradient(#fff 9%, #ffd0f1 9%);
 }
-body .container .form h2 {
+body .container .form .form-header {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 1fr 1fr 1fr 6fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 6fr 1fr 1fr 1fr;
+  margin: 10px auto 7px;
+}
+body .container .form .form-header .dot {
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 2px;
+}
+body .container .form .form-header .dot.dot-red {
+  background-color: #ff6d6d;
+}
+body .container .form .form-header .dot.dot-yellow {
+  background-color: #fffa8c;
+}
+body .container .form .form-header .dot.dot-green {
+  background-color: #9ff7af;
+}
+body .container .form .form-header h2 {
   text-align: center;
-  margin: 5px auto;
+  margin: 0;
   font-family: "Maven Pro", sans-serif;
-  font-size: 20px;
+  font-size: 15px;
+  color: #707974;
 }
 body .container .form hr {
   color: #707974;
@@ -256,14 +284,22 @@ body .container .form .userLogo {
 }
 body .container .form .input {
   display: inline-block;
+  background-color: #fdfdfd;
   width: 70%;
   margin: 5px auto 10px;
   height: 20px;
   border-radius: 20px;
-  border-color: #707974;
+  border: none;
+  padding: 5px 10px;
+  -webkit-box-shadow: 5px 5px #a6a6a6;
+          box-shadow: 5px 5px #a6a6a6;
+}
+body .container .form .input:focus {
+  outline: none;
+  padding: 7px 12px;
 }
 body .container .form .label {
-  size: 15px;
+  size: 12px;
   font-family: "Maven Pro", sans-serif;
   color: #707974;
 }
@@ -272,9 +308,16 @@ body .container .form .registerBtn {
   background-image: url("../../images/drawline.png");
   background-size: cover;
   border: none;
-  width: 140px;
+  width: 55%;
   padding: 10px 20px;
-  margin: 0 auto;
+  margin: 10px auto 0;
   font-family: "Bungee", cursive;
   color: #707974;
+  opacity: 0.8;
+  cursor: pointer;
+}
+body .container .form .registerBtn:hover {
+  width: 60%;
+  opacity: 1;
+  padding: 12px 22px;
 }
