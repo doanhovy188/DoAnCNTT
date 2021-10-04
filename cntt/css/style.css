@@ -132,17 +132,17 @@ body .container .slideshow .gallery .gallery-container {
   display: -ms-flexbox;
   display: flex;
   height: 400px;
-  margin: 0 auto;
-  width: 800px;
+  margin: 70px auto;
+  width: 1000px;
   position: relative;
 }
 body .container .slideshow .gallery .gallery-container .gallery-item {
-  height: 150px;
+  height: 200px;
   opacity: 0;
   position: absolute;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  width: 200px;
+  width: 266px;
   z-index: 0;
   border-radius: 30px;
   -webkit-box-shadow: 3px 3px #a6a6a6;
@@ -155,9 +155,9 @@ body .container .slideshow .gallery .gallery-container .gallery-item.gallery-ite
           transform: translateX(-50%);
 }
 body .container .slideshow .gallery .gallery-container .gallery-item.gallery-item-2, body .container .slideshow .gallery .gallery-container .gallery-item.gallery-item-4 {
-  height: 200px;
+  height: 300px;
   opacity: 1;
-  width: 266px;
+  width: 400px;
   z-index: 1;
 }
 body .container .slideshow .gallery .gallery-container .gallery-item.gallery-item-2 {
@@ -166,12 +166,12 @@ body .container .slideshow .gallery .gallery-container .gallery-item.gallery-ite
           transform: translateX(-50%);
 }
 body .container .slideshow .gallery .gallery-container .gallery-item.gallery-item-3 {
-  height: 300px;
+  height: 400px;
   opacity: 1;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: 400px;
+  width: 533px;
   z-index: 2;
 }
 body .container .slideshow .gallery .gallery-container .gallery-item.gallery-item-4 {
@@ -200,7 +200,7 @@ body .container .slideshow .gallery .gallery-controls button {
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 30px;
   margin: 0 20px;
   padding: 0 12px;
   text-transform: capitalize;
@@ -215,12 +215,12 @@ body .container .slideshow .gallery .gallery-controls .gallery-controls-previous
   position: relative;
 }
 body .container .slideshow .gallery .gallery-controls .gallery-controls-previous::before {
-  border: solid #000;
-  border-width: 0 2px 2px 0;
+  border: solid #707974;
+  border-width: 0 5px 5px 0;
   content: "";
   display: inline-block;
-  height: 4px;
-  left: -10px;
+  height: 18px;
+  left: -20px;
   padding: 2px;
   position: absolute;
   top: 0;
@@ -228,32 +228,32 @@ body .container .slideshow .gallery .gallery-controls .gallery-controls-previous
           transform: rotate(135deg) translateY(-50%);
   -webkit-transition: left 0.15s ease-in-out;
   transition: left 0.15s ease-in-out;
-  width: 4px;
+  width: 18px;
 }
 body .container .slideshow .gallery .gallery-controls .gallery-controls-previous:hover::before {
-  left: -18px;
+  left: -40px;
 }
 body .container .slideshow .gallery .gallery-controls .gallery-controls-next {
   position: relative;
 }
 body .container .slideshow .gallery .gallery-controls .gallery-controls-next::before {
-  border: solid #000;
-  border-width: 0 2px 2px 0;
+  border: solid #707974;
+  border-width: 0 5px 5px 0;
   content: "";
   display: inline-block;
-  height: 4px;
+  height: 18px;
   padding: 2px;
   position: absolute;
-  right: -10px;
+  right: -20px;
   top: 50%;
   -webkit-transform: rotate(-45deg) translateY(-50%);
           transform: rotate(-45deg) translateY(-50%);
   -webkit-transition: right 0.15s ease-in-out;
   transition: right 0.15s ease-in-out;
-  width: 4px;
+  width: 18px;
 }
 body .container .slideshow .gallery .gallery-controls .gallery-controls-next:hover::before {
-  right: -18px;
+  right: -40px;
 }
 body .container .slideshow .gallery .gallery-nav {
   bottom: -15px;
