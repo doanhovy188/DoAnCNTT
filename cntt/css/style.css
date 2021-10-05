@@ -81,6 +81,7 @@ body .container .sidenav .closebtn {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+  color: #c3ab9b;
 }
 body .container .options {
   position: absolute;
@@ -88,6 +89,15 @@ body .container .options {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+body .container .options .muteBtn {
+  width: 45px;
+  cursor: pointer;
+  opacity: 0.9;
+  margin-right: 10px;
+}
+body .container .options .muteBtn:hover {
+  opacity: 1;
 }
 body .container .options .nav-open {
   font-size: 50px;
@@ -99,15 +109,6 @@ body .container .options .nav-open {
 body .container .options .nav-open:hover {
   opacity: 1;
 }
-body .container .options .muteBtn {
-  width: 45px;
-  cursor: pointer;
-  opacity: 0.9;
-  margin-right: 10px;
-}
-body .container .options .muteBtn:hover {
-  opacity: 1;
-}
 body .container .title {
   margin: 20px 0 0;
   font-family: "Bungee Shade", cursive;
@@ -115,11 +116,13 @@ body .container .title {
   font-size: 70px;
   color: #707974;
   line-height: 1;
+  z-index: 999;
 }
 body .container .slideshow {
   position: relative;
   -webkit-transition: 2s;
   transition: 2s;
+  top: 60px;
 }
 body .container .slideshow .gallery {
   width: 100%;
@@ -386,14 +389,39 @@ body .container .login-register .form .input {
   padding: 5px 10px;
   -webkit-box-shadow: 3px 5px #a6a6a6;
           box-shadow: 3px 5px #a6a6a6;
+  font-family: "Maven Pro", sans-serif;
+  color: #707974;
+  font-weight: lighter;
+}
+body .container .login-register .form .input::-webkit-input-placeholder {
+  color: #707974;
+  opacity: 0.8;
+}
+body .container .login-register .form .input::-moz-placeholder {
+  color: #707974;
+  opacity: 0.8;
+}
+body .container .login-register .form .input:-ms-input-placeholder {
+  color: #707974;
+  opacity: 0.8;
+}
+body .container .login-register .form .input::-ms-input-placeholder {
+  color: #707974;
+  opacity: 0.8;
+}
+body .container .login-register .form .input::placeholder {
+  color: #707974;
+  opacity: 0.8;
 }
 body .container .login-register .form .input:focus {
   outline: none;
   padding: 7px 12px;
+  margin: 3px auto 8px;
 }
 body .container .login-register .form .label {
   size: 12px;
   font-family: "Maven Pro", sans-serif;
+  font-weight: bold;
   color: #707974;
 }
 body .container .login-register .form .btn {
@@ -413,4 +441,5 @@ body .container .login-register .form .btn:hover {
   width: 60%;
   opacity: 1;
   padding: 12px 22px;
+  margin: 8px auto -2px;
 }

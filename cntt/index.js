@@ -15,7 +15,7 @@ function hideSlideshow() {
     document.getElementById("slideshow").style.zIndex = "0";
 }
 function showSlideshow() {
-    document.getElementById("slideshow").style.top = "0";
+    document.getElementById("slideshow").style.top = "60px";
     document.getElementById("slideshow").style.zIndex = "1";
 }
 
