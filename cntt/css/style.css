@@ -173,6 +173,7 @@ body .container .slideshow .gallery .gallery-container .gallery-item.gallery-ite
           transform: translateX(-50%);
   width: 533px;
   z-index: 2;
+  cursor: pointer;
 }
 body .container .slideshow .gallery .gallery-container .gallery-item.gallery-item-4 {
   left: 70%;
