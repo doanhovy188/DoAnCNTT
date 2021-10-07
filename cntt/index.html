@@ -8,18 +8,21 @@
     <link rel="stylesheet" href="./css/style.css" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
-<body>
+<body onload="start()">
     <div class="container">
         <div id="mySidenav" class="sidenav">
             <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="#" class="loginbtn" onclick="openLogin()">Log in</a>
             <a href="#" class="registerbtn" onclick="openRegister()">Register</a>
         </div>
-        <div class="options">        
-            <figure class="img muteBtn">
-                <img src="./images/muteicon.png" alt="">
-            </figure>
+        <div class="options">                  
             <span class="nav-open" onclick="openNav()"><i class='fas fa-user-circle'></i></span>
+            <figure class="img muteBtn" onclick="muteBtnClick()">
+                <img src="./images/unMuteIcon.png" alt="" id="muteIcon">
+            </figure>
+            <audio id="mainSound" autoplay>
+                <source src="./sound/main/song5.mp3">
+            </audio>
         </div>
         <h1 class="title" style="position: relative;">VT-GAME</h1>
         <div class="login-register">
@@ -44,8 +47,8 @@
                 <label for="registerPsw" class="label"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" id="registerPsw" class="input" required>
             
-                <label for="psw-repeat" class="label"><b>Repeat Password</b></label>
-                <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" class="input" required>
+                <label for="psw-repeat" class="label"><b>Confirm Password</b></label>
+                <input type="password" placeholder="Confirm Password" name="psw-repeat" id="psw-repeat" class="input" required>
 
                 <button type="submit" class="btn">Register</button>
             </section>
@@ -57,10 +60,10 @@
                     <h2>Create Account</h2>
                 </div>
 
-                <hr>
+                <hr id="breakline">
                 
                 <figure class="img userLogo">
-                    <img src="./images/userlogo.png" alt="">
+                    <img src="./images/chill.png" alt="">
                 </figure>
 
                 <label for="loginUname" class="label"><b>Username:</b></label>
@@ -82,6 +85,7 @@
                     <img class="gallery-item gallery-item-5" src="./images/game/tro-choi-pacman.jpg" data-index="5">
                 </div>
                 <div class="gallery-controls"></div>
+                <audio src="./sound/event/arrowClick.wav" id="arrowClick"></audio>
             </div>
         </section>
     </div>

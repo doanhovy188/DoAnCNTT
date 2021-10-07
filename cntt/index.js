@@ -30,6 +30,7 @@ function closeLogin() {
 function openLogin() {
     document.getElementById("loginForm").style.top = "-400px";
     document.getElementById("loginForm").style.zIndex = "1";
+    document.getElementById("breakline").style.marginTop = "0";
     closeRegister();
     closeNav();
     hideSlideshow();
@@ -46,7 +47,53 @@ function closeRegister() {
 function openRegister() {
     document.getElementById("registerForm").style.top = "70px";
     document.getElementById("registerForm").style.zIndex = "1";
+    document.getElementById("breakline").style.marginTop = "20px";
     closeLogin();
     closeNav();
     hideSlideshow();
 }
+function muteBtnClick() {
+    const music = document.getElementById("mainSound");
+    const muteIcon =  document.getElementById("muteIcon");
+    if (music.paused) {
+        music.play();
+        muteIcon.src = "./images/unMuteIcon.png"
+    }
+    else{
+        music.pause();
+        muteIcon.src = "./images/mutedIcon.png"
+    }
+}
+var audio = document.getElementById("mainSound");
+var songNumber = 1;
+audio.addEventListener('ended',function(){
+    switch (songNumber)
+    {
+        case 1 :
+            audio.src = "./sound/main/song4.mp3";
+            break;
+        case 2 :
+            audio.src = "./sound/main/song3.mp3";
+            break;
+        case 3 :
+            audio.src = "./sound/main/song2.mp3";
+            break;
+        case 4 :
+            audio.src = "./sound/main/song1.mp3";
+            break;
+        case 5 :
+            audio.src = "./sound/main/song6.mp3";
+            break;
+        case 6 :
+            audio.src = "./sound/main/song5.mp3";
+            songNumber = 0;
+            break;
+        default: 
+            audio.src = "./sound/main/song5.mp3";
+            break;        
+    }
+        songNumber++;
+        audio.pause();
+        audio.load();
+        audio.play();
+    });

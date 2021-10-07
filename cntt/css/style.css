@@ -89,6 +89,8 @@ body .container .options {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 30px;
+  margin-right: 20px;
 }
 body .container .options .muteBtn {
   width: 45px;
@@ -102,15 +104,16 @@ body .container .options .muteBtn:hover {
 body .container .options .nav-open {
   font-size: 50px;
   cursor: pointer;
-  color: #ab8370;
+  color: #BDA392;
   opacity: 0.9;
   text-shadow: 3px 3px #a6a6a6;
+  margin-right: 20px;
 }
 body .container .options .nav-open:hover {
   opacity: 1;
 }
 body .container .title {
-  margin: 20px 0 0;
+  margin: 40px 0 0;
   font-family: "Bungee Shade", cursive;
   text-align: center;
   font-size: 70px;
@@ -145,7 +148,7 @@ body .container .slideshow .gallery .gallery-container .gallery-item {
   position: absolute;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  width: 266px;
+  width: 300px;
   z-index: 0;
   border-radius: 30px;
   -webkit-box-shadow: 3px 3px #a6a6a6;
@@ -160,7 +163,7 @@ body .container .slideshow .gallery .gallery-container .gallery-item.gallery-ite
 body .container .slideshow .gallery .gallery-container .gallery-item.gallery-item-2, body .container .slideshow .gallery .gallery-container .gallery-item.gallery-item-4 {
   height: 300px;
   opacity: 1;
-  width: 400px;
+  width: 450px;
   z-index: 1;
 }
 body .container .slideshow .gallery .gallery-container .gallery-item.gallery-item-2 {
@@ -174,7 +177,7 @@ body .container .slideshow .gallery .gallery-container .gallery-item.gallery-ite
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: 533px;
+  width: 600px;
   z-index: 2;
   cursor: pointer;
 }
@@ -353,7 +356,9 @@ body .container .login-register .form hr {
   height: 2px;
   background-color: #707974;
   border: 1px solid #707974;
-  margin: 0 -11px 10px;
+  margin-top: 0;
+  margin-right: -10px;
+  margin-left: -10px;
 }
 body .container .login-register .form .userLogo {
   width: 100px;
