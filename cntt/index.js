@@ -1,25 +1,49 @@
 function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
+    playClickSound();
+    const sidenav = document.getElementById("mySidenav");
+    //document.body.style.opacity = "0.6";
+    document.getElementById("login-register").style.opacity="0.6";
+    document.getElementById("slideshow").style.opacity="0.6";
+    sidenav.style.opacity="1";
+    sidenav.style.marginRight="0";
     //document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.opacity = "0.6";
 }
 
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    //document.getElementById("main").style.marginLeft= "0";
+    playClickSound();
+    const sidenav = document.getElementById("mySidenav");
+    document.getElementById("login-register").style.opacity="1";
+    document.getElementById("slideshow").style.opacity="1";
     document.body.style.opacity = "1";
+    sidenav.style.opacity="0";
+    sidenav.style.marginRight="-320px";
+    //document.getElementById("main").style.marginLeft= "0";
 }
-
+function home(){
+    playClickSound();
+    closeLogin();
+    closeRegister();
+    closeNav();
+    showSlideshow();
+}
+function playClickSound(){
+    const clicksound = document.getElementById("clickSound");
+    clicksound.load();
+    clicksound.play();
+}
 function hideSlideshow() {
+    playClickSound();
     document.getElementById("slideshow").style.top = "-800px";
     document.getElementById("slideshow").style.zIndex = "0";
 }
 function showSlideshow() {
+    playClickSound();
     document.getElementById("slideshow").style.top = "60px";
     document.getElementById("slideshow").style.zIndex = "1";
 }
 
 function closeLogin() {
+    playClickSound();
     document.getElementById("loginForm").style.top = "-1200px";
     document.getElementById("loginForm").style.zIndex = "1";
     if(document.getElementById("registerForm").style.top == "-700px") {
@@ -28,6 +52,7 @@ function closeLogin() {
 }
 
 function openLogin() {
+    playClickSound();
     document.getElementById("loginForm").style.top = "-400px";
     document.getElementById("loginForm").style.zIndex = "1";
     document.getElementById("breakline").style.marginTop = "0";
@@ -37,6 +62,8 @@ function openLogin() {
 }
 
 function closeRegister() {
+    playClickSound();
+
     document.getElementById("registerForm").style.top = "-700px";
     document.getElementById("registerForm").style.zIndex = "0";
     if(document.getElementById("loginForm").style.top == "-1200px") {
@@ -45,14 +72,16 @@ function closeRegister() {
 }
 
 function openRegister() {
+    playClickSound();
+
     document.getElementById("registerForm").style.top = "70px";
     document.getElementById("registerForm").style.zIndex = "1";
-    document.getElementById("breakline").style.marginTop = "20px";
     closeLogin();
     closeNav();
     hideSlideshow();
 }
 function muteBtnClick() {
+    playClickSound();
     const music = document.getElementById("mainSound");
     const muteIcon =  document.getElementById("muteIcon");
     if (music.paused) {
