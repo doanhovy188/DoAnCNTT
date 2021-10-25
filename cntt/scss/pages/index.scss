@@ -5,23 +5,24 @@ body {
     background-size: cover;
     font-family: tahoma;
     transition: 1s;
-
+    user-select: none;
     .container {
 
-        .sidenav {
+        #mySidenav {
             height: 100%;
-            width: 0;
+            width: 320px;
             position: fixed;
             z-index: 1;
             top: 0;
             right: 0;
-            background-color: #ebcfbf;
+            background-color: #ffffff;
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 60px;
-    
+            opacity: 1;
+            margin-right:-320px;
             a {
-                padding: 8px 8px 8px 32px;
+                padding: 8px 8px 8px 62px;
                 text-decoration: none;
                 font-size: 25px;
                 color: #707974;
@@ -38,9 +39,14 @@ body {
                 position: absolute;
                 top: 0;
                 right: 25px;
-                font-size: 36px;
+                font-size: 43px;
                 margin-left: 50px;
-                color: #c3ab9b;
+                color: #707974;
+            }
+            i {
+                margin-right: 10px;
+                width: 32px;
+                height: 32px;
             }
         }
 
@@ -48,7 +54,8 @@ body {
             position: absolute;
             right: 20px;
             display: flex;
-
+            margin-top: 30px;
+            margin-right: 20px;
             .muteBtn {
                 width: 45px;
                 cursor: pointer;
@@ -62,10 +69,10 @@ body {
             .nav-open {
                 font-size: 50px;
                 cursor: pointer;
-                color: #ab8370;
+                color: #BDA392;
                 opacity: 0.9;
                 text-shadow: 3px 3px #a6a6a6;
-
+                margin-right: 20px;
                 &:hover {
                     opacity: 1;
                 }
@@ -73,20 +80,21 @@ body {
         }
 
         .title {
-            margin: 20px 0 0;
+            margin: 40px 0 0;
             font-family: 'Bungee Shade', cursive;
             text-align: center;
             font-size: 70px;
             color: #707974;
             line-height: 1;
             z-index: 999;
+            opacity: 1;
         }
 
         .slideshow {
             position: relative;
             transition: 2s;
             top: 60px;
-
+            opacity: 1;
             .gallery {
                 width: 100%;
 
@@ -103,7 +111,7 @@ body {
                         opacity: 0;
                         position: absolute;
                         transition: all 0.3s ease-in-out;
-                        width: 266px;
+                        width: 300px;
                         z-index: 0;
                         border-radius: 30px;
                         box-shadow: 3px 3px #a6a6a6;
@@ -117,7 +125,7 @@ body {
                         &.gallery-item-2, &.gallery-item-4 {
                             height: 300px;
                             opacity: 1;
-                            width: 400px;
+                            width: 450px;
                             z-index: 1;
                         }
 
@@ -132,7 +140,7 @@ body {
                             opacity: 1;
                             left: 50%;
                             transform: translateX(-50%);
-                            width: 533px;
+                            width: 600px;
                             z-index: 2;
                             cursor: pointer;
                         }
@@ -244,6 +252,8 @@ body {
         
         .login-register {
             height: 0;
+            opacity: 1;
+            transition: 1s;
             #registerForm {
                 position: relative;
                 top: -700px;
@@ -262,7 +272,7 @@ body {
                 border: 5px solid #707974;
                 border-radius: 40px;
                 padding: 0 10px 20px;
-                background-image: linear-gradient(#fff 9%, #ffd0f1 9%);
+                background-image: linear-gradient(#fff 35px, #ffd0f1 1%);
     
                 .form-header {
                     position: relative;
@@ -279,7 +289,7 @@ body {
                         margin: 0 2px;
     
                         &.dot-red {
-                            background-color: #ff6d6d;
+                            background-color: #FF6D6D;
                             cursor: pointer;
                         }
     
@@ -306,7 +316,10 @@ body {
                     height: 2px;
                     background-color: #707974;
                     border: 1px solid #707974;
-                    margin: 0 -11px 10px;
+                    margin-top: 0;
+                    margin-right: -10px;
+                    margin-left: -10px;
+                    //margin: 0 -11px 10px;
                 }
     
                 .userLogo {
@@ -333,11 +346,14 @@ body {
                         }
                     }
                 }
-    
+                .chillLogo  {
+                    width: 150px;
+                    margin:30px auto 30px auto;
+                }
                 .input {
                     display: inline-block;
                     background-color: #fdfdfd;
-                    width: 70%;
+                    width: 60%;
                     margin: 5px auto 10px;
                     height: 20px;
                     border-radius: 20px;
@@ -347,7 +363,7 @@ body {
                     font-family: 'Maven Pro', sans-serif;
                     color: #707974;
                     font-weight: lighter;
-
+                    margin-bottom: 15px;
                     &::placeholder {
                         color: #707974;
                         opacity: 0.8;
@@ -356,7 +372,7 @@ body {
                     &:focus {
                         outline: none;
                         padding: 7px 12px;
-                        margin: 3px auto 8px;
+                        margin: 5px auto 11px;
                     }
                 }
     
@@ -365,6 +381,7 @@ body {
                     font-family: 'Maven Pro', sans-serif;
                     font-weight: bold;
                     color: #707974;
+                    padding-left: 15px;
                 }
     
                 .btn {
@@ -379,12 +396,12 @@ body {
                     color: #707974;
                     opacity: 0.8;
                     cursor: pointer;
-    
+                    margin-bottom: 20px;
                     &:hover {
                         width: 60%;
                         opacity: 1;
                         padding: 12px 22px;
-                        margin: 8px auto -2px;
+                        margin: 10px auto 16px;
                     }
                 }
             }

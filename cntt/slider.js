@@ -2,7 +2,7 @@ const galleryContainer = document.querySelector('.gallery-container');
 const galleryControlsContainer = document.querySelector('.gallery-controls');
 const galleryControls = ['previous', 'next'];
 const galleryItems = document.querySelectorAll('.gallery-item');
-
+const audioControlClick = document.getElementById("arrowClick");
 class Carousel {
   constructor(container, items, controls) {
     this.carouselContainer = container;
@@ -50,8 +50,10 @@ class Carousel {
 
     triggers.forEach(control => {
       control.addEventListener('click', e => {
+        audioControlClick.load();
+        audioControlClick.play();
         e.preventDefault();
-
+        
         if (control.className == 'gallery-controls-add') {
           const newItem = document.createElement('img');
           const latestItem = this.carouselArray.length;

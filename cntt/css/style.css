@@ -48,22 +48,28 @@ body {
   font-family: tahoma;
   -webkit-transition: 1s;
   transition: 1s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
-body .container .sidenav {
+body .container #mySidenav {
   height: 100%;
-  width: 0;
+  width: 320px;
   position: fixed;
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: #ebcfbf;
+  background-color: #ffffff;
   overflow-x: hidden;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   padding-top: 60px;
+  opacity: 1;
+  margin-right: -320px;
 }
-body .container .sidenav a {
-  padding: 8px 8px 8px 32px;
+body .container #mySidenav a {
+  padding: 8px 8px 8px 62px;
   text-decoration: none;
   font-size: 25px;
   color: #707974;
@@ -72,16 +78,21 @@ body .container .sidenav a {
   transition: 0.3s;
   font-family: "Maven Pro", sans-serif;
 }
-body .container .sidenav a:hover {
+body .container #mySidenav a:hover {
   color: #fff;
 }
-body .container .sidenav .closebtn {
+body .container #mySidenav .closebtn {
   position: absolute;
   top: 0;
   right: 25px;
-  font-size: 36px;
+  font-size: 43px;
   margin-left: 50px;
-  color: #c3ab9b;
+  color: #707974;
+}
+body .container #mySidenav i {
+  margin-right: 10px;
+  width: 32px;
+  height: 32px;
 }
 body .container .options {
   position: absolute;
@@ -89,6 +100,8 @@ body .container .options {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 30px;
+  margin-right: 20px;
 }
 body .container .options .muteBtn {
   width: 45px;
@@ -102,27 +115,30 @@ body .container .options .muteBtn:hover {
 body .container .options .nav-open {
   font-size: 50px;
   cursor: pointer;
-  color: #ab8370;
+  color: #BDA392;
   opacity: 0.9;
   text-shadow: 3px 3px #a6a6a6;
+  margin-right: 20px;
 }
 body .container .options .nav-open:hover {
   opacity: 1;
 }
 body .container .title {
-  margin: 20px 0 0;
+  margin: 40px 0 0;
   font-family: "Bungee Shade", cursive;
   text-align: center;
   font-size: 70px;
   color: #707974;
   line-height: 1;
   z-index: 999;
+  opacity: 1;
 }
 body .container .slideshow {
   position: relative;
   -webkit-transition: 2s;
   transition: 2s;
   top: 60px;
+  opacity: 1;
 }
 body .container .slideshow .gallery {
   width: 100%;
@@ -145,7 +161,7 @@ body .container .slideshow .gallery .gallery-container .gallery-item {
   position: absolute;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  width: 266px;
+  width: 300px;
   z-index: 0;
   border-radius: 30px;
   -webkit-box-shadow: 3px 3px #a6a6a6;
@@ -160,7 +176,7 @@ body .container .slideshow .gallery .gallery-container .gallery-item.gallery-ite
 body .container .slideshow .gallery .gallery-container .gallery-item.gallery-item-2, body .container .slideshow .gallery .gallery-container .gallery-item.gallery-item-4 {
   height: 300px;
   opacity: 1;
-  width: 400px;
+  width: 450px;
   z-index: 1;
 }
 body .container .slideshow .gallery .gallery-container .gallery-item.gallery-item-2 {
@@ -174,7 +190,7 @@ body .container .slideshow .gallery .gallery-container .gallery-item.gallery-ite
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: 533px;
+  width: 600px;
   z-index: 2;
   cursor: pointer;
 }
@@ -284,6 +300,9 @@ body .container .slideshow .gallery .gallery-nav li.gallery-item-selected {
 }
 body .container .login-register {
   height: 0;
+  opacity: 1;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 body .container .login-register #registerForm {
   position: relative;
@@ -310,8 +329,7 @@ body .container .login-register .form {
   border: 5px solid #707974;
   border-radius: 40px;
   padding: 0 10px 20px;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(9%, #fff), color-stop(9%, #ffd0f1));
-  background-image: linear-gradient(#fff 9%, #ffd0f1 9%);
+  background-image: linear-gradient(#fff 35px, #ffd0f1 1%);
 }
 body .container .login-register .form .form-header {
   position: relative;
@@ -332,7 +350,7 @@ body .container .login-register .form .form-header .dot {
   margin: 0 2px;
 }
 body .container .login-register .form .form-header .dot.dot-red {
-  background-color: #ff6d6d;
+  background-color: #FF6D6D;
   cursor: pointer;
 }
 body .container .login-register .form .form-header .dot.dot-yellow {
@@ -353,7 +371,9 @@ body .container .login-register .form hr {
   height: 2px;
   background-color: #707974;
   border: 1px solid #707974;
-  margin: 0 -11px 10px;
+  margin-top: 0;
+  margin-right: -10px;
+  margin-left: -10px;
 }
 body .container .login-register .form .userLogo {
   width: 100px;
@@ -378,10 +398,14 @@ body .container .login-register .form .userLogo .avtEdit {
 body .container .login-register .form .userLogo .avtEdit:hover {
   opacity: 1;
 }
+body .container .login-register .form .chillLogo {
+  width: 150px;
+  margin: 30px auto 30px auto;
+}
 body .container .login-register .form .input {
   display: inline-block;
   background-color: #fdfdfd;
-  width: 70%;
+  width: 60%;
   margin: 5px auto 10px;
   height: 20px;
   border-radius: 20px;
@@ -392,6 +416,7 @@ body .container .login-register .form .input {
   font-family: "Maven Pro", sans-serif;
   color: #707974;
   font-weight: lighter;
+  margin-bottom: 15px;
 }
 body .container .login-register .form .input::-webkit-input-placeholder {
   color: #707974;
@@ -416,13 +441,14 @@ body .container .login-register .form .input::placeholder {
 body .container .login-register .form .input:focus {
   outline: none;
   padding: 7px 12px;
-  margin: 3px auto 8px;
+  margin: 5px auto 11px;
 }
 body .container .login-register .form .label {
   size: 12px;
   font-family: "Maven Pro", sans-serif;
   font-weight: bold;
   color: #707974;
+  padding-left: 15px;
 }
 body .container .login-register .form .btn {
   background: none;
@@ -436,10 +462,11 @@ body .container .login-register .form .btn {
   color: #707974;
   opacity: 0.8;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 body .container .login-register .form .btn:hover {
   width: 60%;
   opacity: 1;
   padding: 12px 22px;
-  margin: 8px auto -2px;
+  margin: 10px auto 16px;
 }
