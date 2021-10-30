@@ -1,3 +1,23 @@
+function loadPage(){
+    const profileWindow = document.getElementById("profileWindow");
+    profileWindow.style.visibility = "hidden";
+    }
+function toggleProfile(){
+    const profileWindow = document.getElementById("profileWindow");
+    const redDot = document.getElementById("profileRedDot");
+    if (profileWindow.style.visibility === "hidden") {
+        profileWindow.style.visibility = "visible";
+    }
+    else {
+        profileWindow.style.visibility = "hidden";
+    }
+}
+function closeProfile(){
+    const profileWindow = document.getElementById("profileWindow");
+    profileWindow.style.opacity = "0";
+    const redDot = document.getElementById("profileRedDot");
+    redDot.style.visibility = "hidden";
+}
 function openNav() {
     playClickSound();
     const sidenav = document.getElementById("mySidenav");
@@ -126,3 +146,13 @@ audio.addEventListener('ended',function(){
         audio.load();
         audio.play();
     });
+
+function checkLogin(){
+    const userName = document.getElementById("loginUname").value;
+    const passWord = document.getElementById("loginPsw").value;
+
+}
+
+function checkRegister(){
+
+}

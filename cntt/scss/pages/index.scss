@@ -1,9 +1,9 @@
 body {
-    background-image: url(../images/bg.png);
+    background-image: url("../images/bg.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    font-family: tahoma;
+    font-family: tahoma, sans-serif;
     transition: 1s;
     user-select: none;
     .container {
@@ -56,17 +56,9 @@ body {
             display: flex;
             margin-top: 30px;
             margin-right: 20px;
-            .muteBtn {
-                width: 45px;
-                cursor: pointer;
-                opacity: 0.9;
-                margin-right: 10px;
-                &:hover {
-                    opacity: 1;
-                }
-            }
-
-            .nav-open {
+            align-items: center;
+            .ranking{
+                padding-bottom: 5px;
                 font-size: 50px;
                 cursor: pointer;
                 color: #BDA392;
@@ -76,6 +68,41 @@ body {
                 &:hover {
                     opacity: 1;
                 }
+            }
+            .muteBtn {
+                width: 45px;
+                cursor: pointer;
+                opacity: 0.9;
+                margin-right: 20px;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            .profile {
+                padding-bottom: 5px;
+                font-size: 50px;
+                cursor: pointer;
+                color: #BDA392;
+                opacity: 0.9;
+                text-shadow: 3px 3px #a6a6a6;
+                margin-right: 20px;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            .option{
+                padding-bottom: 5px;
+                font-size: 45px;
+                cursor: pointer;
+                color: #BDA392;
+                opacity: 0.9;
+                text-shadow: 3px 3px #a6a6a6;
+                margin-right: 10px;
+                &:hover {
+                    opacity: 1;
+                }
+                font-weight: lighter;
             }
         }
 
@@ -249,7 +276,62 @@ body {
                 }
             }
         }
-        
+        #profileWindow{
+            visibility: hidden;
+            width: 650px;
+            height: 400px;
+            background-image: linear-gradient(#fff 50px, #ffd0f1 1%);
+            position: absolute;
+            margin-top: -445px;
+            margin-left: 180px;
+            z-index: 9999;
+            border-radius: 60px;
+            border: 5px solid #707974;
+            .profile-header{
+                display: flex;
+                align-items: center;
+                height: 50px;
+                width: 100%;
+                h2 {
+                    text-align: center;
+                    font-family: 'Maven Pro', sans-serif;
+                    font-size: 22px;
+                    color: #707974;
+                    margin-right : 150px;
+                }
+                .dot {
+                    height: 15px;
+                    width: 15px;
+                    background-color: #bbb;
+                    border-radius: 50%;
+                    margin: 0 2px;
+                    display: inline-block;
+                    &.dot-red {
+                        background-color: #FF6D6D;
+                        cursor: pointer;
+                        margin-left: 30px;
+                    }
+
+                    &.dot-yellow {
+                        background-color: #fffa8c;
+                    }
+
+                    &.dot-green {
+                        background-color: #9ff7af;
+                        margin-right : 32%;
+                   }
+                }
+            }
+            hr{
+                color: #707974;
+                height: 1px;
+                background-color: #707974;
+                border: 2px solid #707974;
+                margin-top: 0;
+                margin-right: -5px;
+                margin-left: -5px;
+            }
+        }
         .login-register {
             height: 0;
             opacity: 1;
@@ -354,7 +436,6 @@ body {
                     display: inline-block;
                     background-color: #fdfdfd;
                     width: 60%;
-                    margin: 5px auto 10px;
                     height: 20px;
                     border-radius: 20px;
                     border: none;
@@ -363,7 +444,8 @@ body {
                     font-family: 'Maven Pro', sans-serif;
                     color: #707974;
                     font-weight: lighter;
-                    margin-bottom: 15px;
+                    margin: 5px auto 15px;
+
                     &::placeholder {
                         color: #707974;
                         opacity: 0.8;
@@ -386,17 +468,17 @@ body {
     
                 .btn {
                     background: none;
-                    background-image: url("../images/drawline.png");
+                    background-image: url('../images/drawline.png');
                     background-size: cover;
                     border: none;
                     width: 55%;
                     padding: 10px 20px;
-                    margin: 10px auto 0;
                     font-family: 'Bungee', cursive;
                     color: #707974;
                     opacity: 0.8;
                     cursor: pointer;
-                    margin-bottom: 20px;
+                    margin: 10px auto 20px;
+
                     &:hover {
                         width: 60%;
                         opacity: 1;
