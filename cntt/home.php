@@ -1,6 +1,7 @@
 <?php
 if (session_id() === '')
     session_start();
+    require_once ('./lib/dbhelper.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +12,7 @@ if (session_id() === '')
     <title>VT-Game</title>
     <link rel="stylesheet" href="./css/style.css" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="index.js"></script>
 </head>
 <body onload="loadPage()">
 <?php
@@ -19,20 +21,6 @@ if (session_id() === '')
     }
 
 ?>
-<script>
-    function logout(){
-        let xmlhttp;
-        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } else {// code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-
-        xmlhttp.open("GET","./php/session_destroyer.php",false);
-        xmlhttp.send();
-        window.location.pathname = "/DoAnCNTT-Try/cntt/index.php"
-    }
-</script>
 <audio src="./sound/event/click.wav" id="clickSound"></audio>
 <div class="container">
     <div id="mySidenav" class="sidenav">
@@ -52,57 +40,7 @@ if (session_id() === '')
         </audio>
     </div>
     <h1 class="title" id="class" style="position: relative;">VT-GAME</h1>
-    <div class="login-register" id="login-register">
-        <form class="form" id="registerForm" action="./php/process.php" method="post">
-            <div class="form-header">
-                <span class="dot dot-red" onclick="closeRegister()"></span>
-                <span class="dot dot-yellow"></span>
-                <span class="dot dot-green"></span>
-                <h2>Create Account</h2>
-            </div>
-
-            <hr>
-
-            <figure class="img userLogo">
-                <img src="./images/userlogo.png" alt="">
-                <button class="avtEdit"><i class="fas fa-edit"></i></button>
-            </figure>
-
-            <label for="registerUname" class="label"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" id="registerUname" class="input" required>
-
-            <label for="registerPsw" class="label"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" id="registerPsw" class="input" required>
-
-            <label for="psw-repeat" class="label"><b>Confirm Password</b></label>
-            <input type="password" placeholder="Confirm Password" name="psw-repeat" id="psw-repeat" class="input" required>
-
-            <button type="submit" class="btn">Register</button>
-        </form>
-        <form class="form" id="loginForm" action="./php/process.php" method="post">
-            <div class="form-header">
-                <span class="dot dot-red" onclick="closeLogin()"></span>
-                <span class="dot dot-yellow"></span>
-                <span class="dot dot-green"></span>
-                <h2>Login</h2>
-            </div>
-
-            <hr id="breakline">
-
-            <figure class="img chillLogo">
-                <img src="./images/chill.png" alt="">
-            </figure>
-
-            <label for="loginUname" class="label"><b>Username:</b></label>
-            <input type="text" placeholder="Enter Username" name="username" id="loginUname" class="input" required>
-
-            <label for="loginPsw" class="label"><b>Password:</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" id="loginPsw" class="input" required>
-
-            <button type="submit" class="btn" name="btn_submit">Login</button>
-        </form>
-    </div>
-    <section class="slideshow" id="slideshow">
+    <section class="slideshow" id="slideshow" visibility="hidden">
         <div class="gallery">
             <div class="gallery-container">
                 <img class="gallery-item gallery-item-1" src="./images/game/4566_uhd-4k-wallpaper-06.jpg" data-index="1">
@@ -120,14 +58,49 @@ if (session_id() === '')
             <span class="dot dot-red" onclick="closeProfile()" id="profileRedDot"></span>
             <span class="dot dot-yellow"></span>
             <span class="dot dot-green"></span>
-            <h2>profile</h2>
+            <h2>Profile</h2>
         </div>
-
         <hr id="profileBreakline">
+        <div class="profileBody">
+            <div class="logo-name">
+                <figure class="img userLogo">
+                    <img src="./images/userlogo.png" alt="">
+                    <button class="avtEdit"><i class="fas fa-edit"></i></button>
+                </figure>
+            </div>
+            <div class="profileInfo">
+                <h3>My Record</h3>
+                <table class="recordTable">
+					<thead>
+						<tr>
+							<th>Game</th>
+							<th>Score</th>
+							<th>Rank</th>
+						</tr>
+                        <span></span>
+					</thead>
+					<tbody>
+<?php
+//Lay danh sach danh muc tu database
+$sql = 'select * from highscore';
+$record = executeResult($sql);
+
+$index = 0;
+foreach ($record as $item) {
+    $index++;
+	echo '<tr>
+				<td>'.$item['idGame'].'</td>
+                <td>'.$item['Score'].'</td>
+			</tr>';
+}
+?>
+					</tbody>
+				</table>
+            </div>
+        </div>
     </section>
 </div>
 </body>
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <script src="slider.js"></script>
-<script src="index.js"></script>
 </html>

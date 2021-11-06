@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Maven+Pro:wght@700&display=swap');
+
+@font-face {
+    font-family: "anothershabby";
+    src:url('../fonts/Anothershabby_trial.ttf') format('truetype'),
+    url('../fonts/Anothershabby_trial.eot') format('embedded-opentype'),
+    url('../fonts/Anothershabby_trial.woff') format('woff');
+    font-weight:normal;
+    font-style:normal;
+}
+
 body {
     margin: 0px;
     height: 100vh;;

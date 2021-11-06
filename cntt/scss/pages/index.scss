@@ -277,13 +277,9 @@ body {
             }
         }
         #profileWindow{
-            visibility: hidden;
             width: 650px;
             height: 400px;
             background-image: linear-gradient(#fff 50px, #ffd0f1 1%);
-            position: absolute;
-            margin-top: -445px;
-            margin-left: 180px;
             z-index: 9999;
             border-radius: 60px;
             border: 5px solid #707974;
@@ -319,7 +315,7 @@ body {
                     &.dot-green {
                         background-color: #9ff7af;
                         margin-right : 32%;
-                   }
+                    }
                 }
             }
             hr{
@@ -330,6 +326,75 @@ body {
                 margin-top: 0;
                 margin-right: -5px;
                 margin-left: -5px;
+            }
+
+            .profileBody {
+                display: flex;
+                height: 80%;
+                align-items: center;
+                justify-content: space-around;
+
+                .logo-name {
+                    flex-grow: 1;
+
+                    .userLogo {
+                        width: 100px;
+                        margin: 10px auto;
+                        position: relative;
+        
+                        .avtEdit {
+                            border-radius: 50%;
+                            width: 27px;
+                            height: 27px;
+                            padding: 0;
+                            opacity: 0.8;
+                            border: none;
+                            color: #72767b;
+                            box-shadow: 3px 3px #a6a6a6;
+                            cursor: pointer;
+                            position: absolute;
+                            bottom: 10px;
+                            right: 7px;
+        
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+
+                .profileInfo {
+                    flex-grow: 3;
+
+                    h3 {
+                        text-align: center;
+                        font-family: 'anothershabby';
+                        color: #ffffff;
+                        text-shadow: 3px 3px #a6a6a6;
+                        font-size: 36px;
+                        margin: 0;
+                    }
+
+                    .recordTable {
+                        width: 100%;
+
+                        thead {
+                            tr {
+                                th {
+                                    font-family: 'anothershabby';
+                                    color: #ffffff;
+                                    text-shadow: 3px 3px #a6a6a6;
+                                    font-size: 27px;
+                                }
+                            }
+                            span {
+                                width: 80%;
+                                background-image: url('../images/profile_line1.png');
+                                background-size: cover;
+                            }
+                        }
+                    }
+                }
             }
         }
         .login-register {

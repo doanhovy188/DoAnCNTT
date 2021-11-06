@@ -1,6 +1,6 @@
 function loadPage(){
     const profileWindow = document.getElementById("profileWindow");
-    profileWindow.style.visibility = "hidden";
+    profileWindow.style.visibility = "visible";
     }
 function toggleProfile(){
     const profileWindow = document.getElementById("profileWindow");
@@ -22,8 +22,10 @@ function openNav() {
     playClickSound();
     const sidenav = document.getElementById("mySidenav");
     //document.body.style.opacity = "0.6";
-    document.getElementById("login-register").style.opacity="0.6";
-    document.getElementById("slideshow").style.opacity="0.6";
+    try {
+        document.getElementById("login-register").style.opacity="0.6";
+        document.getElementById("slideshow").style.opacity="0.6";
+    } catch {}
     sidenav.style.opacity="1";
     sidenav.style.marginRight="0";
     //document.getElementById("main").style.marginLeft = "250px";
@@ -32,8 +34,10 @@ function openNav() {
 function closeNav() {
     playClickSound();
     const sidenav = document.getElementById("mySidenav");
-    document.getElementById("login-register").style.opacity="1";
-    document.getElementById("slideshow").style.opacity="1";
+    try {
+        document.getElementById("login-register").style.opacity="1";
+        document.getElementById("slideshow").style.opacity="1";
+    } catch {}
     document.body.style.opacity = "1";
     sidenav.style.opacity="0";
     sidenav.style.marginRight="-320px";
@@ -156,3 +160,17 @@ function checkLogin(){
 function checkRegister(){
 
 }
+
+function logout(){
+    let xmlhttp;
+    if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    } else {// code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    xmlhttp.open("GET","./php/session_destroyer.php",false);
+    xmlhttp.send();
+    window.location.pathname = "/DoAnCNTT-Try/cntt/index.php"
+}
+

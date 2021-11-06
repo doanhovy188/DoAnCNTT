@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Maven+Pro:wght@700&display=swap");
+@font-face {
+  font-family: "anothershabby";
+  src: url("../fonts/Anothershabby_trial.ttf") format("truetype"), url("../fonts/Anothershabby_trial.eot") format("embedded-opentype"), url("../fonts/Anothershabby_trial.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   margin: 0px;
   height: 100vh;
@@ -328,13 +334,9 @@ body .container .slideshow .gallery .gallery-nav li.gallery-item-selected {
   background: #555;
 }
 body .container #profileWindow {
-  visibility: hidden;
   width: 650px;
   height: 400px;
   background-image: linear-gradient(#fff 50px, #ffd0f1 1%);
-  position: absolute;
-  margin-top: -445px;
-  margin-left: 180px;
   z-index: 9999;
   border-radius: 60px;
   border: 5px solid #707974;
@@ -384,6 +386,72 @@ body .container #profileWindow hr {
   margin-top: 0;
   margin-right: -5px;
   margin-left: -5px;
+}
+body .container #profileWindow .profileBody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+body .container #profileWindow .profileBody .logo-name {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+body .container #profileWindow .profileBody .logo-name .userLogo {
+  width: 100px;
+  margin: 10px auto;
+  position: relative;
+}
+body .container #profileWindow .profileBody .logo-name .userLogo .avtEdit {
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  padding: 0;
+  opacity: 0.8;
+  border: none;
+  color: #72767b;
+  -webkit-box-shadow: 3px 3px #a6a6a6;
+          box-shadow: 3px 3px #a6a6a6;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: 7px;
+}
+body .container #profileWindow .profileBody .logo-name .userLogo .avtEdit:hover {
+  opacity: 1;
+}
+body .container #profileWindow .profileBody .profileInfo {
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+}
+body .container #profileWindow .profileBody .profileInfo h3 {
+  text-align: center;
+  font-family: "anothershabby";
+  color: #ffffff;
+  text-shadow: 3px 3px #a6a6a6;
+  font-size: 36px;
+  margin: 0;
+}
+body .container #profileWindow .profileBody .profileInfo .recordTable {
+  width: 100%;
+}
+body .container #profileWindow .profileBody .profileInfo .recordTable thead tr th {
+  font-family: "anothershabby";
+  color: #ffffff;
+  text-shadow: 3px 3px #a6a6a6;
+  font-size: 27px;
+}
+body .container #profileWindow .profileBody .profileInfo .recordTable thead span {
+  width: 80%;
+  background-image: url("../images/profile_line1.png");
+  background-size: cover;
 }
 body .container .login-register {
   height: 0;
