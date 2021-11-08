@@ -1,45 +1,44 @@
 <?php
-require_once ('connection.php');
+require_once ('config.php');
 
 function execute($sql) {
 	//save data into table
-	// open connection to database
-	if(isset($conn)){
-        //insert, update, delete
-        mysqli_query($conn, $sql);
-    }
-	//close connection
-	//mysqli_close($con);
+	// open connnection to database
+	$conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
+	//insert, update, delete
+	mysqli_query($conn, $sql);
+
+	//close connnection
+	mysqli_close($conn);
 }
 
 function executeResult($sql) {
 	//save data into table
-	// open connection to database
-	//$con = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
-    if(isset($conn)){
-        //insert, update, delete
-        $result = mysqli_query($conn, $sql);
-        $data   = [];
-        while ($row = mysqli_fetch_array($result, 1)) {
+	// open connnection to database
+	$conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
+	//insert, update, delete
+	$result = mysqli_query($conn, $sql);
+
+    while ($row = mysqli_fetch_array($result, 1)) {
             $data[] = $row;
-            return $data;
-        }
-	//close connection
-	//mysqli_close($con);
-    }else echo "Error executing";
+    }
+
+	//close connnection
+	mysqli_close($conn);
+
+	return $data;
 }
 
 function executeSingleResult($sql) {
 	//save data into table
-	// open connection to database
-	//$con = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
+	// open connnection to database
+	$conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
 	//insert, update, delete
-    if(isset($conn)) {
-        $result = mysqli_query($conn, $sql);
-        $row    = mysqli_fetch_array($result, 1);
-    
-        //close connection
-        //mysqli_close($con);
-        return $row;
-    }
+	$result = mysqli_query($conn, $sql);
+	$row    = mysqli_fetch_array($result, 1);
+
+	//close connnection
+	mysqli_close($conn);
+
+	return $row;
 }

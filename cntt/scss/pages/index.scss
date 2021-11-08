@@ -283,6 +283,7 @@ body {
             z-index: 9999;
             border-radius: 60px;
             border: 5px solid #707974;
+            margin: 0 auto;
             .profile-header{
                 display: flex;
                 align-items: center;
@@ -333,14 +334,16 @@ body {
                 height: 80%;
                 align-items: center;
                 justify-content: space-around;
+                padding-right: 20px;
 
                 .logo-name {
                     flex-grow: 1;
 
                     .userLogo {
-                        width: 100px;
+                        width: 120px;
                         margin: 10px auto;
                         position: relative;
+                        margin: 0 auto;
         
                         .avtEdit {
                             border-radius: 50%;
@@ -361,6 +364,23 @@ body {
                             }
                         }
                     }
+
+                    h3 {
+                        text-align: center;
+                        font-family: 'Maven Pro', sans-serif;
+                        font-size: 22px;
+                        color: #707974;
+                        margin: 0;
+
+                        i {
+                            cursor: pointer;
+                            opacity: 0.8;
+
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
                 }
 
                 .profileInfo {
@@ -368,15 +388,18 @@ body {
 
                     h3 {
                         text-align: center;
-                        font-family: 'anothershabby';
                         color: #ffffff;
                         text-shadow: 3px 3px #a6a6a6;
                         font-size: 36px;
                         margin: 0;
+                        font-family: 'anothershabby';
                     }
 
                     .recordTable {
                         width: 100%;
+                        height: 230px;
+                        background: url("../images/profile_line.png");
+                        background-size: cover;
 
                         thead {
                             tr {
@@ -387,10 +410,110 @@ body {
                                     font-size: 27px;
                                 }
                             }
-                            span {
-                                width: 80%;
-                                background-image: url('../images/profile_line1.png');
-                                background-size: cover;
+                        }
+
+                        tbody {
+                            tr {
+                                td {
+                                    color: #707974;
+                                    text-shadow: 1px 1px #a6a6a6;
+                                    font-size: 22px;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #rankWindow {
+            width: 650px;
+            height: 400px;
+            background-image: linear-gradient(#fff 50px, #ffd0f1 1%);
+            z-index: 9999;
+            border-radius: 60px;
+            border: 5px solid #707974;
+            margin: 0 auto;
+            .rank-header{
+                display: flex;
+                align-items: center;
+                height: 50px;
+                width: 100%;
+                h2 {
+                    text-align: center;
+                    font-family: 'Maven Pro', sans-serif;
+                    font-size: 22px;
+                    color: #707974;
+                    margin-right : 150px;
+                }
+                .dot {
+                    height: 15px;
+                    width: 15px;
+                    background-color: #bbb;
+                    border-radius: 50%;
+                    margin: 0 2px;
+                    display: inline-block;
+                    &.dot-red {
+                        background-color: #FF6D6D;
+                        cursor: pointer;
+                        margin-left: 30px;
+                    }
+
+                    &.dot-yellow {
+                        background-color: #fffa8c;
+                    }
+
+                    &.dot-green {
+                        background-color: #9ff7af;
+                        margin-right : 32%;
+                    }
+                }
+            }
+            hr{
+                color: #707974;
+                height: 1px;
+                background-color: #707974;
+                border: 2px solid #707974;
+                margin-top: 0;
+                margin-right: -5px;
+                margin-left: -5px;
+            }
+
+            .rankInfo {
+                padding: 0 20px;
+                h3 {
+                    text-align: center;
+                    color: #ffffff;
+                    text-shadow: 3px 3px #a6a6a6;
+                    font-size: 36px;
+                    margin: 0;
+                    font-family: 'anothershabby';
+                }
+
+                .rankTable {
+                    width: 100%;
+                    height: 230px;
+                    background: url("../images/rank_line.png");
+                    background-size: cover;
+
+                    thead {
+                        tr {
+                            th {
+                                font-family: 'anothershabby';
+                                color: #ffffff;
+                                text-shadow: 3px 3px #a6a6a6;
+                                font-size: 27px;
+                            }
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            td {
+                                color: #707974;
+                                text-shadow: 1px 1px #a6a6a6;
+                                font-size: 22px;
+                                text-align: center;
                             }
                         }
                     }

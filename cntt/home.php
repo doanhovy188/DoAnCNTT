@@ -67,6 +67,7 @@ if (session_id() === '')
                     <img src="./images/userlogo.png" alt="">
                     <button class="avtEdit"><i class="fas fa-edit"></i></button>
                 </figure>
+                <h3>vippro <i class="fas fa-pencil-alt" style="font-size:16px"></i></h3>
             </div>
             <div class="profileInfo">
                 <h3>My Record</h3>
@@ -80,17 +81,23 @@ if (session_id() === '')
                         <span></span>
 					</thead>
 					<tbody>
+                        <!-- <tr>
+                            <td>Game</td>
+                            <td>Score</td>
+                            <td>Rank</td>
+                        </tr> -->
 <?php
 //Lay danh sach danh muc tu database
-$sql = 'select * from highscore';
+$sql = 'CALL profile("'.$_SESSION["username"].'")';
 $record = executeResult($sql);
 
 $index = 0;
 foreach ($record as $item) {
     $index++;
 	echo '<tr>
-				<td>'.$item['idGame'].'</td>
+				<td>'.$item['gameName'].'</td>
                 <td>'.$item['Score'].'</td>
+                <td>'.$item['rank'].'</td>
 			</tr>';
 }
 ?>
@@ -98,6 +105,55 @@ foreach ($record as $item) {
 				</table>
             </div>
         </div>
+    </section>
+    <section class="rankWindow" id="rankWindow">
+        <div class="rank-header">
+            <span class="dot dot-red" onclick="closeProfile()" id="profileRedDot"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <h2>Ranking</h2>
+        </div>
+        <hr>
+        <div class="rankInfo">
+                <h3>Snake</h3>
+                <table class="rankTable">
+					<thead>
+						<tr>
+							<th>Rank</th>
+                            <th>Avt</th>
+							<th>Name</th>
+							<th>Score</th>
+                            <th>Date</th>
+						</tr>
+                        <span></span>
+					</thead>
+					<tbody>
+                        <!-- <tr>
+                            <td>Game</td>
+                            <td>Score</td>
+                            <td>Rank</td>
+                            <td>Rank</td>
+                            <td>Rank</td>
+                        </tr> -->
+                    <?php
+//Lay danh sach danh muc tu database
+$sql = 'select * from top_2048';
+$record = executeResult($sql);
+
+$index = 1;
+foreach ($record as $item) {
+    $index++;
+	echo '<tr>
+				<td>'.$item['rank'].'</td>
+                <td>'.$item['image'].'</td>
+                <td>'.$item['name'].'</td>
+                <td>'.$item['Score'].'</td>
+                <td>'.$item['date'].'</td>
+			</tr>';
+}
+?>
+                    </tbody>
+                </table>
     </section>
 </div>
 </body>
