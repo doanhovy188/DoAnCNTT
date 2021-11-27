@@ -165,7 +165,7 @@ foreach ($record as $item) {
                 let position = document.cookie.search("usernamelogin")+14;
                 console.log(document.cookie.toString().slice(position));
 
-                const username= document.cookie.toString().slice(position);
+                var username= document.cookie.toString().slice(position);
 
                 var data=-1;
                 var eventMethod = window.addEventListener
@@ -186,7 +186,7 @@ foreach ($record as $item) {
                     data = e.data;
                     console.log(data);
                     var xmlHttp = new XMLHttpRequest();  //not the cross browser way of doing it
-                    xmlHttp.open("GET", "http://localhost:8080/cntt/php/update.php?username="+"vippro"+"&idgame="+data[0]+"&score="+data[1], true); 
+                    xmlHttp.open("GET", "http://localhost:8080/cntt/php/update.php?username="+username+"&idgame="+data[0]+"&score="+data[1], true); 
                     xmlHttp.send(null);
                 });
             </script>
