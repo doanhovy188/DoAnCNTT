@@ -1,6 +1,7 @@
 <?php
 if (session_id() === '')
     session_start();
+    require_once ('./lib/dbhelper.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -131,6 +132,41 @@ function alert($message){
                 <audio src="./sound/event/arrowClick.wav" id="arrowClick"></audio>
             </div>
         </section>
+        <iframe src="./games/flappybird" title="Flappy Bird" style="width: 1000px; height: 630px; border: none"></iframe>
+        <script type="text/javascript">
+                var data=-1;
+                var eventMethod = window.addEventListener
+                        ? "addEventListener"
+                        : "attachEvent";
+                var eventer = window[eventMethod];
+                var messageEvent = eventMethod === "attachEvent"
+                    ? "onmessage"
+                    : "message";
+
+                eventer(messageEvent, function (e) {
+
+                    // if (e.origin !== 'http://the-trusted-iframe-origin.com') return;
+                    
+                    // if (e.data === "myevent" || e.message === "myevent") {
+                    // 	alert('Message from iframe just came!');
+
+                    data = e.data;
+                    console.log(data);
+                    
+                    <?php $idgame = "<script>document.writeln(data[0]);</script>";
+                            $score = "<script>document.writeln(data[1]);</script>";
+                            echo "document.getElementById('error').innerHTML=$score";
+                            try {
+                                $sql = "insert into highscore (userName, idGame, Score)  values ('vippro', $idgame, $score)";
+                                execute($sql);
+                            } catch (Exception $e) {
+                                echo "document.getElementById('error').innerHTML=$score";
+                            }
+                    ?>
+                });
+            </script>
+            <h1 class="" id="error"></h1>
+            <?php echo $sql, $score, $idgame; ?>
     </div>
 </body>
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
