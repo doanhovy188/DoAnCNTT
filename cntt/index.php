@@ -152,19 +152,19 @@ function alert($message){
 
                     data = e.data;
                     console.log(data);
-                    
-                    <?php $idgame = "<script>document.writeln(data[0]);</script>";
-                            $score = "<script>document.writeln(data[1]);</script>";
-                            echo "document.getElementById('error').innerHTML=$score";
-                            try {
-                                $sql = "insert into highscore (userName, idGame, Score)  values ('vippro', $idgame, $score)";
-                                execute($sql);
-                            } catch (Exception $e) {
-                                echo "document.getElementById('error').innerHTML=$score";
-                            }
-                    ?>
+                    document.cookie = "idgame = " + data[0];
+                    document.cookie = "score = " + data[1];
                 });
             </script>
+            <?php $idgame= $_COOKIE['idgame'];
+                $score= $_COOKIE['score'];
+                try {
+                    $sql = "insert into highscore (userName, idGame, Score)  values ('vippro', $idgame, $score)";
+                    execute($sql);
+                } catch (Exception $e) {
+                    echo "document.getElementById('error').innerHTML=$score";
+                }
+            ?>
             <h1 class="" id="error"></h1>
             <?php echo $sql, $score, $idgame; ?>
     </div>
