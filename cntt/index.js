@@ -171,6 +171,6 @@ function logout(){
 
     xmlhttp.open("GET","./php/session_destroyer.php",false);
     xmlhttp.send();
-    window.location.pathname = "/DoAnCNTT-Try/cntt/index.php"
+    window.location.pathname = "/cntt/index.php"
 }
 

@@ -18,6 +18,10 @@ if (session_id() === '')
 <?php
     if(!isset($_SESSION["username"])){
         header('Location: index.php');
+    } else {
+        $cookie_name = "usernamelogin";
+        $cookie_value = $_SESSION["username"];
+        setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
     }
 
 ?>
@@ -136,26 +140,56 @@ foreach ($record as $item) {
                             <td>Rank</td>
                         </tr> -->
                     <?php
-//Lay danh sach danh muc tu database
-$sql = 'select * from top_2048';
-$record = executeResult($sql);
+                        //Lay danh sach danh muc tu database
+                        $sql = 'select * from top_2048';
+                        $record = executeResult($sql);
 
-$index = 1;
-foreach ($record as $item) {
-    $index++;
-	echo '<tr>
-				<td>'.$item['rank'].'</td>
-                <td>'.$item['image'].'</td>
-                <td>'.$item['name'].'</td>
-                <td>'.$item['Score'].'</td>
-                <td>'.$item['date'].'</td>
-			</tr>';
-}
-?>
+                        $index = 1;
+                        foreach ($record as $item) {
+                            $index++;
+                            echo '<tr>
+                                        <td>'.$item['rank'].'</td>
+                                        <td>'.$item['image'].'</td>
+                                        <td>'.$item['name'].'</td>
+                                        <td>'.$item['Score'].'</td>
+                                        <td>'.$item['date'].'</td>
+                                    </tr>';
+                        }
+                    ?>
                     </tbody>
                 </table>
     </section>
+    <iframe src="./games/flappybird" title="Flappy Bird" style="width: 1000px; height: 630px; border: none"></iframe>
 </div>
+            <script type="text/javascript">
+                let position = document.cookie.search("usernamelogin")+14;
+                console.log(document.cookie.toString().slice(position));
+
+                const username= document.cookie.toString().slice(position);
+
+                var data=-1;
+                var eventMethod = window.addEventListener
+                        ? "addEventListener"
+                        : "attachEvent";
+                var eventer = window[eventMethod];
+                var messageEvent = eventMethod === "attachEvent"
+                    ? "onmessage"
+                    : "message";
+
+                eventer(messageEvent, function (e) {
+
+                    // if (e.origin !== 'http://the-trusted-iframe-origin.com') return;
+                    
+                    // if (e.data === "myevent" || e.message === "myevent") {
+                    // 	alert('Message from iframe just came!');
+
+                    data = e.data;
+                    console.log(data);
+                    var xmlHttp = new XMLHttpRequest();  //not the cross browser way of doing it
+                    xmlHttp.open("GET", "http://localhost:8080/cntt/php/update.php?username="+"vippro"+"&idgame="+data[0]+"&score="+data[1], true); 
+                    xmlHttp.send(null);
+                });
+            </script>
 </body>
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <script src="slider.js"></script>
