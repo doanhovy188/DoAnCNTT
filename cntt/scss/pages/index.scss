@@ -404,10 +404,10 @@ body {
                         thead {
                             tr {
                                 th {
-                                    font-family: 'anothershabby';
+                                    font-family: 'Permanent Marker', cursive;
                                     color: #ffffff;
                                     text-shadow: 3px 3px #a6a6a6;
-                                    font-size: 27px;
+                                    font-size: 30px;
                                 }
                             }
                         }
@@ -416,6 +416,8 @@ body {
                             tr {
                                 td {
                                     color: #707974;
+                                    font-family: 'Permanent Marker', cursive;
+                                    width: 33%;
                                     text-shadow: 1px 1px #a6a6a6;
                                     font-size: 22px;
                                     text-align: center;
@@ -481,43 +483,91 @@ body {
 
             .rankInfo {
                 padding: 0 20px;
-                h3 {
+
+                .tab {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .tab-link {
+                        background: none;
+                        border: none;
+                        text-align: center;
+                        color: #707974;
+                        text-shadow: 3px 3px #a6a6a6;
+                        font-size: 24px;
+                        margin: 0;
+                        font-family: 'Permanent Marker', cursive;
+                        cursor: pointer;
+
+                        &:hover {
+                            font-size: 32px;
+                        }
+                        &.active {
+                            font-size: 36px;
+                            color: #fff;
+                            position: relative;
+                            top: -5px;
+                        }
+                    }
+                }
+
+                .rank-header {
+                    display: grid;
+                    grid-template-columns: 10% 25% 25% 15% 25%;
                     text-align: center;
-                    color: #ffffff;
-                    text-shadow: 3px 3px #a6a6a6;
-                    font-size: 36px;
-                    margin: 0;
-                    font-family: 'anothershabby';
-                }
 
-                .rankTable {
-                    width: 100%;
-                    height: 230px;
-                    background: url("../images/rank_line.png");
-                    background-size: cover;
-
-                    thead {
-                        tr {
-                            th {
-                                font-family: 'anothershabby';
-                                color: #ffffff;
-                                text-shadow: 3px 3px #a6a6a6;
-                                font-size: 27px;
-                            }
-                        }
-                    }
-
-                    tbody {
-                        tr {
-                            td {
-                                color: #707974;
-                                text-shadow: 1px 1px #a6a6a6;
-                                font-size: 22px;
-                                text-align: center;
-                            }
-                        }
+                    h3 {
+                        font-family: 'Permanent Marker', cursive;
+                        color: #ffffff;
+                        text-shadow: 3px 3px #a6a6a6;
+                        font-size: 30px;
+                        margin: 0;
                     }
                 }
+
+                .tab-content {
+                    display: grid;
+                    grid-template-columns: 10% 25% 25% 15% 25%;
+                    text-align: center;
+
+                    p {
+                        color: #707974;
+                        font-family: 'Permanent Marker', cursive;
+                        text-shadow: 1px 1px #a6a6a6;
+                        font-size: 22px;
+                        text-align: center;
+                    }
+                }
+
+                // .rankTable {
+                //     width: 100%;
+                //     height: 230px;
+                //     background: url("../images/rank_line.png");
+                //     background-size: cover;
+
+                    // thead {
+                    //     tr {
+                    //         th {
+                    //             font-family: 'anothershabby';
+                    //             color: #ffffff;
+                    //             text-shadow: 3px 3px #a6a6a6;
+                    //             font-size: 27px;
+                    //         }
+                    //     }
+                    // }
+
+                    // tbody {
+                    //     tr {
+                    //         td {
+                    //             color: #707974;
+                    //             text-shadow: 1px 1px #a6a6a6;
+                    //             font-size: 22px;
+                    //             text-align: center;
+                    //         }
+                    //     }
+                    // }
+                // }
             }
         }
         .login-register {

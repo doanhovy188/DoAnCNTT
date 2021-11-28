@@ -9,6 +9,7 @@ class Game {
     load() {
         this.snake=new Snake(this);
         this.food=new Food(this, this.snake);
+        this.menu=new Menu(this);
     }
     fooding() {
         this.food.load();
@@ -20,13 +21,18 @@ class Game {
             this.snake.load();
         }
         else {
-            this.snake.load();
+            this.menu.openForm();
+            document.getElementById('score').style.top='200px';
+            let data = [1, score];
+            parent.postMessage(data, "*");
         }
     }
     eating() {
         if(this.snake.x==this.food.x && this.snake.y==this.food.y) {
             this.food.ran();
             this.snake.length++;
+            score++;
+            document.getElementById('score').innerHTML='Score: ' + score;
         }
     }
     islosed() {
@@ -47,5 +53,5 @@ class Game {
         setTimeout(() => this.run(), 100);
     }
 }
-
+var score = -1;
 var g = new Game();

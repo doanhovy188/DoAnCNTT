@@ -8,15 +8,20 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div id="container">
-        <div class="menu">
-            <h1>Menu</h1>
-            <button id="restart">Restart</button>
-            <button id="restart"></button>
+    <div class="container">
+        <div class="header">
+            <p id="score">Score: 0</p>
         </div>
         <canvas id="canvas" width="900" height="600"></canvas>
+        <div class="form-popup" id="myForm">
+            <form class="form-container">
+                <h1>Menu</h1>
+                <button type="submit" class="btn restart" onclick="closeForm()">Restart</button>
+            </form>
+        </div>
     </div>
 </body>
+    <script src="menu.js"></script>
     <script src="food.js"></script>
     <script src="snake.js"></script>
     <script src="game.js"></script>

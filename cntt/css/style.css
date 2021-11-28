@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Maven+Pro:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @font-face {
   font-family: "anothershabby";
   src: url("../fonts/Anothershabby_trial.ttf") format("truetype"), url("../fonts/Anothershabby_trial.eot") format("embedded-opentype"), url("../fonts/Anothershabby_trial.woff") format("woff");
@@ -463,13 +464,15 @@ body .container #profileWindow .profileBody .profileInfo .recordTable {
   background-size: cover;
 }
 body .container #profileWindow .profileBody .profileInfo .recordTable thead tr th {
-  font-family: "anothershabby";
+  font-family: "Permanent Marker", cursive;
   color: #ffffff;
   text-shadow: 3px 3px #a6a6a6;
-  font-size: 27px;
+  font-size: 30px;
 }
 body .container #profileWindow .profileBody .profileInfo .recordTable tbody tr td {
   color: #707974;
+  font-family: "Permanent Marker", cursive;
+  width: 33%;
   text-shadow: 1px 1px #a6a6a6;
   font-size: 22px;
   text-align: center;
@@ -532,28 +535,61 @@ body .container #rankWindow hr {
 body .container #rankWindow .rankInfo {
   padding: 0 20px;
 }
-body .container #rankWindow .rankInfo h3 {
+body .container #rankWindow .rankInfo .tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body .container #rankWindow .rankInfo .tab .tab-link {
+  background: none;
+  border: none;
   text-align: center;
-  color: #ffffff;
-  text-shadow: 3px 3px #a6a6a6;
-  font-size: 36px;
-  margin: 0;
-  font-family: "anothershabby";
-}
-body .container #rankWindow .rankInfo .rankTable {
-  width: 100%;
-  height: 230px;
-  background: url("../images/rank_line.png");
-  background-size: cover;
-}
-body .container #rankWindow .rankInfo .rankTable thead tr th {
-  font-family: "anothershabby";
-  color: #ffffff;
-  text-shadow: 3px 3px #a6a6a6;
-  font-size: 27px;
-}
-body .container #rankWindow .rankInfo .rankTable tbody tr td {
   color: #707974;
+  text-shadow: 3px 3px #a6a6a6;
+  font-size: 24px;
+  margin: 0;
+  font-family: "Permanent Marker", cursive;
+  cursor: pointer;
+}
+body .container #rankWindow .rankInfo .tab .tab-link:hover {
+  font-size: 32px;
+}
+body .container #rankWindow .rankInfo .tab .tab-link.active {
+  font-size: 36px;
+  color: #fff;
+  position: relative;
+  top: -5px;
+}
+body .container #rankWindow .rankInfo .rank-header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 25% 25% 15% 25%;
+  grid-template-columns: 10% 25% 25% 15% 25%;
+  text-align: center;
+}
+body .container #rankWindow .rankInfo .rank-header h3 {
+  font-family: "Permanent Marker", cursive;
+  color: #ffffff;
+  text-shadow: 3px 3px #a6a6a6;
+  font-size: 30px;
+  margin: 0;
+}
+body .container #rankWindow .rankInfo .tab-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 25% 25% 15% 25%;
+  grid-template-columns: 10% 25% 25% 15% 25%;
+  text-align: center;
+}
+body .container #rankWindow .rankInfo .tab-content p {
+  color: #707974;
+  font-family: "Permanent Marker", cursive;
   text-shadow: 1px 1px #a6a6a6;
   font-size: 22px;
   text-align: center;

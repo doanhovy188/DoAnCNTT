@@ -371,6 +371,8 @@ class Mtr {
                 return false;
             }
         }
+        let data = [2, score];
+        parent.postMessage(data, "*");
         return true;
     }
     handle() {
@@ -415,7 +417,7 @@ class Mtr {
                 this.load();
             }
             if(this.checklose()==true) {
-                document.getElementById('result').innerHTML='you lose';
+                document.getElementById('result').innerHTML='YOU LOSE!!!';
             }
             document.getElementById('back').addEventListener('click',() => {
                 for (var i = 0; i < this.n; i++) {

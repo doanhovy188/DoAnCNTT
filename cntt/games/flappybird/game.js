@@ -33,7 +33,7 @@ class Game {
         if(this.bird.y>470) {
             if(this.islose==0) {
                 document.getElementById('gamezone').style.backgroundImage='none';
-                setTimeout(() => document.getElementById('gamezone').style.backgroundImage='url("../images/bg.png")', 10);
+                setTimeout(() => document.getElementById('gamezone').style.backgroundImage='url("./images/bg.png")', 10);
             }
             this.menu.openForm();
             document.getElementById('score').style.top='200px';
