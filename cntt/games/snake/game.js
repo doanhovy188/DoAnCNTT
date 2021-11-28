@@ -10,6 +10,7 @@ class Game {
         this.snake=new Snake(this);
         this.food=new Food(this, this.snake);
         this.menu=new Menu(this);
+        this.checklose = 0;
     }
     fooding() {
         this.food.load();
@@ -23,8 +24,11 @@ class Game {
         else {
             this.menu.openForm();
             document.getElementById('score').style.top='200px';
-            let data = [1, score];
-            parent.postMessage(data, "*");
+            this.checklose ++;
+            if(this.checklose==1) {
+                let data = [1, score];
+                parent.postMessage(data, "*");
+            }
         }
     }
     eating() {

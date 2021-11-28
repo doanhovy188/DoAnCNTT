@@ -211,9 +211,13 @@ if (session_id() === '')
     </div>
     <script type="text/javascript">
         let position = document.cookie.search("usernamelogin") + 14;
-        console.log(document.cookie.toString().slice(position));
+        let str = document.cookie.toString().slice(position);
+        console.log(str);
 
-        var username = document.cookie.toString().slice(position);
+        let position1 = str.search(";");
+
+        var username = str.slice(0, position1);
+        console.log(username);
 
         var data = -1;
         var eventMethod = window.addEventListener
