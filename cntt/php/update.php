@@ -4,7 +4,8 @@ require_once ('../lib/dbhelper.php');
     $idgame= $_GET['idgame'];
     $score= $_GET['score'];
     try {
-        $sql = "insert into highscore (userName, idGame, Score)  values ('$username', $idgame, $score)";
+        //$sql = "insert into highscore (userName, idGame, Score)  values ('$username', $idgame, $score)";
+        $sql = "CALL insertScore('$username', $idgame, $score)";
         execute($sql);
     } catch (Exception $e) {
         echo $e;

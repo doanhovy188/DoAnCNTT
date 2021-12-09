@@ -1,4 +1,5 @@
 class Pipe{
+    // static pipes = ["pink","orange","red","blue","green","yellow","gray"];
     constructor(game, x, y) {
         this.game=game;
         this.x=x;
@@ -13,10 +14,14 @@ class Pipe{
     }
 
     load() {
+        let pipes = ["pink","orange","red","blue","green","yellow","gray"];
         this.upimg=new Image;
-        this.upimg.src=('./images/up.png');
+        let upPipe = pipes[Math.floor(Math.random() * 7)];
+        this.upimg.src=("./images/" + upPipe + "up.png");
         this.downimg=new Image;
-        this.downimg.src=('./images/down.png');
+        let downPipe = pipes[Math.floor(Math.random() * 7)];
+        this.downimg.src=("./images/" + downPipe + "down.png");
+        console.log(upPipe,downPipe);
     }
 
     update(t) {

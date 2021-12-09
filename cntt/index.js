@@ -1,12 +1,11 @@
 function loadPage(){
-    const profileWindow = document.getElementById("profileWindow");
-    profileWindow.style.visibility = "visible";
-    }
+}
 function toggleProfile(){
     const profileWindow = document.getElementById("profileWindow");
     const redDot = document.getElementById("profileRedDot");
     if (profileWindow.style.visibility === "hidden") {
         profileWindow.style.visibility = "visible";
+        document.getElementById("rankWindow").style.visibility = "hidden";
     }
     else {
         profileWindow.style.visibility = "hidden";
@@ -44,12 +43,18 @@ function closeNav() {
     //document.getElementById("main").style.marginLeft= "0";
 }
 function home(){
-    playClickSound();
+    homeLogged();
     closeLogin();
     closeRegister();
+}
+
+function homeLogged(){
+    playClickSound();
     closeNav();
+    hideGame();
     showSlideshow();
 }
+
 function playClickSound(){
     const clicksound = document.getElementById("clickSound");
     clicksound.load();
@@ -104,6 +109,18 @@ function openRegister() {
     closeNav();
     hideSlideshow();
 }
+
+function rankClick() {
+    const rankBtn = document.getElementById("rankWindow");
+    if (rankBtn.style.visibility === "hidden"){
+        rankBtn.style.visibility = "visible";
+        document.getElementById("profileWindow").style.visibility = "hidden";
+    }
+    else{
+        rankBtn.style.visibility = "hidden";
+    }
+}
+
 function muteBtnClick() {
     playClickSound();
     const music = document.getElementById("mainSound");
@@ -171,7 +188,7 @@ function logout(){
 
     xmlhttp.open("GET","./php/session_destroyer.php",false);
     xmlhttp.send();
-    window.location.pathname = "/cntt/index.php"
+    window.location.pathname = "DoAnCNTT/cntt/index.php"
 }
 
 function openRecord(evt, gameName) {
@@ -186,4 +203,28 @@ function openRecord(evt, gameName) {
     }
     document.getElementById(gameName).style.display = "grid";
     evt.currentTarget.className += " active";
+}
+
+function hideGame(){
+    document.getElementById("flappyBird").style.visibility = "hidden";
+    document.getElementById("g2048").style.visibility = "hidden";
+    document.getElementById("gsnake").style.visibility = "hidden";
+}
+
+function flappyBirdClick() {
+    hideSlideshow();
+    hideGame();
+    document.getElementById("flappyBird").style.visibility = "visible";
+}
+
+function game2048Click(){
+    hideSlideshow();
+    hideGame();
+    document.getElementById("g2048").style.visibility = "visible";
+}
+
+function snakeClick(){
+    hideSlideshow();
+    hideGame();
+    document.getElementById("gsnake").style.visibility = "visible";
 }

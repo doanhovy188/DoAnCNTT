@@ -33,6 +33,7 @@ class Game {
     }
     eating() {
         if(this.snake.x==this.food.x && this.snake.y==this.food.y) {
+            this.snake.tailsColors.unshift(this.food.foodColor);
             this.food.ran();
             this.snake.length++;
             score++;

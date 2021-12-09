@@ -32,11 +32,11 @@ if (session_id() === '')
     <div class="container">
         <div id="mySidenav" class="sidenav">
             <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#" class="loginbtn" onclick="home()"><i class="fas fa-home"></i> Home</a>
+            <a href="#" class="loginbtn" onclick="homeLogged()"><i class="fas fa-home"></i> Home</a>
             <a href="#" class="logoutbtn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Log out</a>
         </div>
         <div class="options">
-            <span class="ranking"><i class="fas fa-medal"></i></span>
+            <span class="ranking"><i class="fas fa-medal" onclick="rankClick()"></i></span>
             <span class="profile"><i class='fas fa-user-circle' onclick="toggleProfile()"></i></span>
             <figure class="img muteBtn" onclick="muteBtnClick()">
                 <img src="./images/unMuteIcon.png" alt="" id="muteIcon">
@@ -50,13 +50,13 @@ if (session_id() === '')
         <section class="slideshow" id="slideshow" visibility="hidden">
             <div class="gallery">
                 <div class="gallery-container">
-                    <img class="gallery-item gallery-item-1" src="./images/game/4566_uhd-4k-wallpaper-06.jpg"
+                    <img class="gallery-item gallery-item-1" src="./images/game/maxresdefault.jpg"
                         data-index="1">
-                    <img class="gallery-item gallery-item-2" src="./images/game/Flappy_Bird_ZIVE.jpg" data-index="2">
-                    <img class="gallery-item gallery-item-3" src="./images/game/maxresdefault.jpg" data-index="3">
+                    <img class="gallery-item gallery-item-2" src="./images/game/paperPlane.jpg" data-index="2" onclick="flappyBirdClick()">
+                    <img class="gallery-item gallery-item-3" src="./images/game/2048.jpg" data-index="3" onclick="game2048Click()">
                     <img class="gallery-item gallery-item-4"
-                        src="./images/game/space-game-background-neon-night-alien-landscape_107791-1624.jpg"
-                        data-index="4">
+                        src="./images/game/snake.jpg"
+                        data-index="4" onclick="snakeClick()">
                     <img class="gallery-item gallery-item-5" src="./images/game/tro-choi-pacman.jpg" data-index="5">
                 </div>
                 <div class="gallery-controls"></div>
@@ -77,7 +77,7 @@ if (session_id() === '')
                         <img src="./images/userlogo.png" alt="">
                         <button class="avtEdit"><i class="fas fa-edit"></i></button>
                     </figure>
-                    <h3>vippro <i class="fas fa-pencil-alt" style="font-size:16px"></i></h3>
+                    <?php echo '<h3>'.$_SESSION["username"]. '<i class="fas fa-pencil-alt" style="font-size:16px"></i></h3>'?>
                 </div>
                 <div class="profileInfo">
                     <h3>My Record</h3>
@@ -111,7 +111,7 @@ if (session_id() === '')
                 </div>
             </div>
         </section>
-        <section class="rankWindow" id="rankWindow">
+        <section class="rankWindow" id="rankWindow" style="visibility: hidden">
             <div class="rank-header">
                 <span class="dot dot-red" onclick="closeProfile()" id="profileRedDot"></span>
                 <span class="dot dot-yellow"></span>
@@ -187,27 +187,12 @@ if (session_id() === '')
                     ?>
                 </div>
         </section>
-        <!-- 
-    <div id="snake" class="tabcontent">
-        <h3>London</h3>
-        <p>London is the capital city of England.</p>
-    </div>
-
-    <div id="2048" class="tabcontent">
-        <h3>Paris</h3>
-        <p>Paris is the capital of France.</p> 
-    </div>
-
-    <div id="flappybird" class="tabcontent">
-        <h3>Tokyo</h3>
-        <p>Tokyo is the capital of Japan.</p>
-    </div> -->
-        <iframe src="./games/flappybird" title="Flappy Bird"
-            style="width: 1000px; height: 630px; border: none;"></iframe>
-        <iframe src="./games/2048" title="2048"
-            style="width: 550px; height: 650px; border: none;"></iframe>
-        <iframe src="./games/snake" title="Snake"
-            style="width: 1000px; height: 630px; border: none;"></iframe>
+        <iframe id= "flappyBird" class= "game flappyBird" src="./games/flappybird" title="Flappy Bird"
+            style="width: 1000px; height: 630px; border: none; visibility: hidden"></iframe>
+        <iframe id= "g2048" class= "game g2048" src="./games/2048" title="2048"
+            style="width: 550px; height: 650px; border: none; visibility: hidden"></iframe>
+        <iframe id= "gsnake" class= "game snake" src="./games/snake" title="Snake"
+            style="width: 1000px; height: 630px; border: none; visibility: hidden"></iframe>
     </div>
     <script type="text/javascript">
         let position = document.cookie.search("usernamelogin") + 14;

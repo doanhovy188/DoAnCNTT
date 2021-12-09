@@ -117,7 +117,7 @@ body .container .title {
   font-size: 70px;
   color: #707974;
   line-height: 1;
-  z-index: 999;
+  z-index: 0;
   opacity: 1;
 }
 body .container .slideshow {
@@ -286,17 +286,13 @@ body .container .slideshow .gallery .gallery-nav li.gallery-item-selected {
   background: #555;
 }
 body .container #profileWindow {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
   width: 650px;
   height: 400px;
   background-image: linear-gradient(#fff 50px, #ffd0f1 1%);
-  position: absolute;
-  margin-top: -445px;
-  margin-left: 180px;
   z-index: 9999;
   border-radius: 60px;
   border: 5px solid #707974;
+  margin: 0 auto;
 }
 body .container #profileWindow .profile-header {
   display: -webkit-box;
@@ -335,9 +331,6 @@ body .container #profileWindow .profile-header .dot.dot-green {
   background-color: #9ff7af;
   margin-right: 32%;
 }
-body .container #profileWindow .profile-header #profileRedDot {
-  visibility: hidden;
-}
 body .container #profileWindow hr {
   color: #707974;
   height: 1px;
@@ -346,6 +339,211 @@ body .container #profileWindow hr {
   margin-top: 0;
   margin-right: -5px;
   margin-left: -5px;
+}
+body .container #profileWindow .profileBody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-right: 20px;
+}
+body .container #profileWindow .profileBody .logo-name {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+body .container #profileWindow .profileBody .logo-name .userLogo {
+  width: 120px;
+  margin: 10px auto;
+  position: relative;
+  margin: 0 auto;
+}
+body .container #profileWindow .profileBody .logo-name .userLogo .avtEdit {
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  padding: 0;
+  opacity: 0.8;
+  border: none;
+  color: #72767b;
+  -webkit-box-shadow: 3px 3px #a6a6a6;
+          box-shadow: 3px 3px #a6a6a6;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: 7px;
+}
+body .container #profileWindow .profileBody .logo-name .userLogo .avtEdit:hover {
+  opacity: 1;
+}
+body .container #profileWindow .profileBody .logo-name h3 {
+  text-align: center;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 22px;
+  color: #707974;
+  margin: 0;
+}
+body .container #profileWindow .profileBody .logo-name h3 i {
+  cursor: pointer;
+  opacity: 0.8;
+}
+body .container #profileWindow .profileBody .logo-name h3 i:hover {
+  opacity: 1;
+}
+body .container #profileWindow .profileBody .profileInfo {
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+}
+body .container #profileWindow .profileBody .profileInfo h3 {
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 3px 3px #a6a6a6;
+  font-size: 36px;
+  margin: 0;
+  font-family: "anothershabby";
+}
+body .container #profileWindow .profileBody .profileInfo .recordTable {
+  width: 100%;
+  height: 230px;
+  background: url("../images/profile_line.png");
+  background-size: cover;
+}
+body .container #profileWindow .profileBody .profileInfo .recordTable thead tr th {
+  font-family: "Permanent Marker", cursive;
+  color: #ffffff;
+  text-shadow: 3px 3px #a6a6a6;
+  font-size: 30px;
+}
+body .container #profileWindow .profileBody .profileInfo .recordTable tbody tr td {
+  color: #707974;
+  font-family: "Permanent Marker", cursive;
+  width: 33%;
+  text-shadow: 1px 1px #a6a6a6;
+  font-size: 22px;
+  text-align: center;
+}
+body .container #rankWindow {
+  width: 650px;
+  height: 400px;
+  background-image: linear-gradient(#fff 50px, #ffd0f1 1%);
+  z-index: 9999;
+  border-radius: 60px;
+  border: 5px solid #707974;
+  margin: 0 auto;
+}
+body .container #rankWindow .rank-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+  width: 100%;
+}
+body .container #rankWindow .rank-header h2 {
+  text-align: center;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 22px;
+  color: #707974;
+  margin-right: 150px;
+}
+body .container #rankWindow .rank-header .dot {
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 2px;
+  display: inline-block;
+}
+body .container #rankWindow .rank-header .dot.dot-red {
+  background-color: #FF6D6D;
+  cursor: pointer;
+  margin-left: 30px;
+}
+body .container #rankWindow .rank-header .dot.dot-yellow {
+  background-color: #fffa8c;
+}
+body .container #rankWindow .rank-header .dot.dot-green {
+  background-color: #9ff7af;
+  margin-right: 32%;
+}
+body .container #rankWindow hr {
+  color: #707974;
+  height: 1px;
+  background-color: #707974;
+  border: 2px solid #707974;
+  margin-top: 0;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+body .container #rankWindow .rankInfo {
+  padding: 0 20px;
+}
+body .container #rankWindow .rankInfo .tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body .container #rankWindow .rankInfo .tab .tab-link {
+  background: none;
+  border: none;
+  text-align: center;
+  color: #707974;
+  text-shadow: 3px 3px #a6a6a6;
+  font-size: 24px;
+  margin: 0;
+  font-family: "Permanent Marker", cursive;
+  cursor: pointer;
+}
+body .container #rankWindow .rankInfo .tab .tab-link:hover {
+  font-size: 32px;
+}
+body .container #rankWindow .rankInfo .tab .tab-link.active {
+  font-size: 36px;
+  color: #fff;
+  position: relative;
+  top: -5px;
+}
+body .container #rankWindow .rankInfo .rank-header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 25% 25% 15% 25%;
+  grid-template-columns: 10% 25% 25% 15% 25%;
+  text-align: center;
+}
+body .container #rankWindow .rankInfo .rank-header h3 {
+  font-family: "Permanent Marker", cursive;
+  color: #ffffff;
+  text-shadow: 3px 3px #a6a6a6;
+  font-size: 30px;
+  margin: 0;
+}
+body .container #rankWindow .rankInfo .tab-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 25% 25% 15% 25%;
+  grid-template-columns: 10% 25% 25% 15% 25%;
+  text-align: center;
+}
+body .container #rankWindow .rankInfo .tab-content p {
+  color: #707974;
+  font-family: "Permanent Marker", cursive;
+  text-shadow: 1px 1px #a6a6a6;
+  font-size: 22px;
+  text-align: center;
 }
 body .container .login-register {
   height: 0;

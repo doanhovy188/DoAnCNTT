@@ -32,8 +32,7 @@ class Game {
     run() {
         if(this.bird.y>470) {
             if(this.islose==0) {
-                document.getElementById('gamezone').style.backgroundImage='none';
-                setTimeout(() => document.getElementById('gamezone').style.backgroundImage='url("./images/bg.png")', 10);
+                
             }
             this.menu.openForm();
             document.getElementById('score').style.top='200px';
@@ -60,8 +59,7 @@ class Game {
                 this.islose++;
                 this.bird.handle(this.islose);
                 if(this.islose==1) {
-                    document.getElementById('gamezone').style.backgroundImage='none';
-                    setTimeout(() => document.getElementById('gamezone').style.backgroundImage='url("./images/bg.png")', 10);
+
 
                 }
             }

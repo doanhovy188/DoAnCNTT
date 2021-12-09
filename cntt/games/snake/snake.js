@@ -12,15 +12,34 @@ class Snake {
         this.tail=[[200-this.thick, 200], [200-2*this.thick, 200]];
         this.headimg=new Image();
         this.headimg.src="./images/1601752.png"
+        this.tailsColors = [];
+        this.colors = [`rgb(101, 228, 230)`,`rgb(255, 208, 241)`,`rgb(255, 200, 169)`,`rgb(255, 250, 140)`,`rgb(255, 170, 165)`,`rgb(212, 255, 144)`];
+        
+        let num = Math.floor(Math.random() * this.colors.length)
+        this.tailsColors.push(this.colors[num]);
+        this.colors.splice(num,1);
+
+        num = Math.floor(Math.random() * this.colors.length)
+        this.tailsColors.push(this.colors[num]);
+        this.colors.splice(num,1);
+
+        num = Math.floor(Math.random() * this.colors.length)
+        this.tailsColors.push(this.colors[num]);
+        this.colors.splice(num,1);
+
+        num = Math.floor(Math.random() * this.colors.length)
+        this.tailsColors.push(this.colors[num]);
+        this.colors.splice(num,1);
+
         this.load();
         this.move();
     }
 
     load() {
-        this.game.context.fillStyle='green';
+        this.game.context.fillStyle=this.tailsColors[0];
         this.game.context.fillRect(this.x, this.y, this.thick, this.thick);
         for(let i=0; i<this.length; i++) {
-            this.game.context.fillStyle='green';
+            this.game.context.fillStyle=this.tailsColors[i+1];
             this.game.context.fillRect(this.tail[i][0]+1, this.tail[i][1]+1, this.thick-2, this.thick-2);
         }
     }

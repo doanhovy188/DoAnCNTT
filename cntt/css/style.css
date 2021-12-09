@@ -160,13 +160,13 @@ body .container .options .option:hover {
   opacity: 1;
 }
 body .container .title {
-  margin: 40px 0 0;
+  margin: 40px 500px 0;
   font-family: "Bungee Shade", cursive;
   text-align: center;
   font-size: 70px;
   color: #707974;
   line-height: 1;
-  z-index: 999;
+  z-index: 0;
   opacity: 1;
 }
 body .container .slideshow {
@@ -335,13 +335,17 @@ body .container .slideshow .gallery .gallery-nav li.gallery-item-selected {
   background: #555;
 }
 body .container #profileWindow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 650px;
   height: 400px;
   background-image: linear-gradient(#fff 50px, #ffd0f1 1%);
   z-index: 9999;
   border-radius: 60px;
   border: 5px solid #707974;
-  margin: 0 auto;
 }
 body .container #profileWindow .profile-header {
   display: -webkit-box;
@@ -484,7 +488,11 @@ body .container #rankWindow {
   z-index: 9999;
   border-radius: 60px;
   border: 5px solid #707974;
-  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 body .container #rankWindow .rank-header {
   display: -webkit-box;
@@ -763,4 +771,11 @@ body .container .login-register .form .btn:hover {
   opacity: 1;
   padding: 12px 22px;
   margin: 10px auto 16px;
+}
+body .container .game {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }

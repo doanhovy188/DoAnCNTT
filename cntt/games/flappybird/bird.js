@@ -14,9 +14,9 @@ class Bird {
     }
     load() {
         this.img=new Image;
-        this.img.src='./images/bird.png';
+        this.img.src='./images/paperPlane1.png';
         this.img1=new Image;
-        this.img1.src='./images/bird1.png';
+        this.img1.src='./images/paperPlane.png';
     }
 
     update() {

@@ -71,7 +71,7 @@ function alert($message){
             <a href="#" class="registerbtn" onclick="openRegister()"><i class="fas fa-user-plus"></i> Register</a>
         </div>
         <div class="options">
-            <span class="ranking"><i class="fas fa-medal"></i></span>
+            <span class="ranking" onclick="rankClick()"><i class="fas fa-medal"></i></span>
             <figure class="img muteBtn" onclick="muteBtnClick()">
                 <img src="./images/unMuteIcon.png" alt="" id="muteIcon">
             </figure>
@@ -134,17 +134,101 @@ function alert($message){
         <section class="slideshow" id="slideshow">
             <div class="gallery">
                 <div class="gallery-container">
-                    <img class="gallery-item gallery-item-1" src="./images/game/4566_uhd-4k-wallpaper-06.jpg" data-index="1">
-                    <img class="gallery-item gallery-item-2" src="./images/game/Flappy_Bird_ZIVE.jpg" data-index="2">
-                    <img class="gallery-item gallery-item-3" src="./images/game/maxresdefault.jpg" data-index="3">
-                    <img class="gallery-item gallery-item-4" src="./images/game/space-game-background-neon-night-alien-landscape_107791-1624.jpg" data-index="4">
+                <img class="gallery-item gallery-item-1" src="./images/game/maxresdefault.jpg"
+                        data-index="1">
+                    <img class="gallery-item gallery-item-2" src="./images/game/paperPlane.jpg" data-index="2" onclick="flappyBirdClick()">
+                    <img class="gallery-item gallery-item-3" src="./images/game/2048.jpg" data-index="3" onclick="game2048Click()">
+                    <img class="gallery-item gallery-item-4"
+                        src="./images/game/snake.jpg"
+                        data-index="4" onclick="snakeClick()">
                     <img class="gallery-item gallery-item-5" src="./images/game/tro-choi-pacman.jpg" data-index="5">
                 </div>
                 <div class="gallery-controls"></div>
                 <audio src="./sound/event/arrowClick.wav" id="arrowClick"></audio>
             </div>
         </section>
-        <iframe src="./games/flappybird" title="Flappy Bird" style="width: 1000px; height: 630px; border: none"></iframe>
+        <section class="rankWindow" id="rankWindow" style="visibility: hidden">
+            <div class="rank-header">
+                <span class="dot dot-red" onclick="closeProfile()" id="profileRedDot"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+                <h2>Ranking</h2>
+            </div>
+            <hr>
+            <div class="rankInfo">
+                <div class="tab">
+                    <button class="tab-link active" onclick="openRecord(event, 'snake')">Snake</button>
+                    <button class="tab-link" onclick="openRecord(event, '2048')">2048</button>
+                    <button class="tab-link" onclick="openRecord(event, 'flappybird')">Flappy Bird</button>
+                </div>
+                <div class="rank-header">
+                    <h3>Rank</h3>
+                    <h3>Avt</h3>
+                    <h3>Name</h3>
+                    <h3>Score</h3>
+                    <h3>Date</h3>
+                </div>
+                <div id="snake" class="tab-content">
+                    <?php
+                        //Lay danh sach danh muc tu database
+                        $sql = 'select * from top_snake';
+                        $record = executeResult($sql);
+                        $index = 1;
+                        foreach ($record as $item) {
+                            $index++;
+                            echo '
+                                        <p>'.$item['rank'].'</p>
+                                        <p>'.$item['image'].'</p>
+                                        <p>'.$item['name'].'</p>
+                                        <p>'.$item['Score'].'</p>
+                                        <p>'.$item['date'].'</p>
+                                ';
+                        }
+                    ?>
+                </div>
+                <div id="2048" class="tab-content" style="display: none">
+                    <?php
+                        //Lay danh sach danh muc tu database
+                        $sql = 'select * from top_2048';
+                        $record = executeResult($sql);
+                        $index = 1;
+                        foreach ($record as $item) {
+                            $index++;
+                            echo '
+                                        <p>'.$item['rank'].'</p>
+                                        <p>'.$item['image'].'</p>
+                                        <p>'.$item['name'].'</p>
+                                        <p>'.$item['Score'].'</p>
+                                        <p>'.$item['date'].'</p>
+                                    ';
+                        }
+                    ?>
+                </div>
+                <div id="flappybird" class="tab-content" style="display: none">
+                    <?php
+                        //Lay danh sach danh muc tu database
+                        $sql = 'select * from top_snake';
+                        $record = executeResult($sql);
+                        $index = 1;
+                        foreach ($record as $item) {
+                            $index++;
+                            echo '
+                                        <p>'.$item['rank'].'</p>
+                                        <p>'.$item['image'].'</p>
+                                        <p>'.$item['name'].'</p>
+                                        <p>'.$item['Score'].'</p>
+                                        <p>'.$item['date'].'</p>
+                                    ';
+                        }
+                    ?>
+                </div>
+        </section>
+        <iframe id= "flappyBird" class= "game flappyBird" src="./games/flappybird" title="Flappy Bird"
+            style="width: 1000px; height: 630px; border: none; visibility: hidden"></iframe>
+        <iframe id= "g2048" class= "game g2048" src="./games/2048" title="2048"
+            style="width: 550px; height: 650px; border: none; visibility: hidden"></iframe>
+        <iframe id= "gsnake" class= "game snake" src="./games/snake" title="Snake"
+            style="width: 1000px; height: 630px; border: none; visibility: hidden"></iframe>   
     </div>
 </body>
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
