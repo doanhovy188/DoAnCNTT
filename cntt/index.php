@@ -176,13 +176,17 @@ function alert($message){
                         $index = 1;
                         foreach ($record as $item) {
                             $index++;
+                            $record = $item['image'];
+                            $path = "\"./images/avatar/$record\"";
                             echo '
                                         <p>'.$item['rank'].'</p>
-                                        <p>'.$item['image'].'</p>
+                                        <figure class= "rankAvatar"  >
+                                            <img  src='.$path.'>
+                                        </figure>
                                         <p>'.$item['name'].'</p>
                                         <p>'.$item['Score'].'</p>
                                         <p>'.$item['date'].'</p>
-                                ';
+                                    ';
                         }
                     ?>
                 </div>
@@ -194,9 +198,13 @@ function alert($message){
                         $index = 1;
                         foreach ($record as $item) {
                             $index++;
+                            $record = $item['image'];
+                            $path = "\"./images/avatar/$record\"";
                             echo '
                                         <p>'.$item['rank'].'</p>
-                                        <p>'.$item['image'].'</p>
+                                        <figure class= "rankAvatar" >
+                                            <img src='.$path.'>
+                                        </figure>
                                         <p>'.$item['name'].'</p>
                                         <p>'.$item['Score'].'</p>
                                         <p>'.$item['date'].'</p>
@@ -212,9 +220,13 @@ function alert($message){
                         $index = 1;
                         foreach ($record as $item) {
                             $index++;
+                            $record = $item['image'];
+                            $path = "\"./images/avatar/$record\"";
                             echo '
                                         <p>'.$item['rank'].'</p>
-                                        <p>'.$item['image'].'</p>
+                                        <figure class= "rankAvatar" >
+                                            <img src='.$path.'>
+                                        </figure>
                                         <p>'.$item['name'].'</p>
                                         <p>'.$item['Score'].'</p>
                                         <p>'.$item['date'].'</p>

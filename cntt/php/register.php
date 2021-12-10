@@ -34,8 +34,10 @@ if (isset($conn)) {
 
         if(isset($kt) && (!$kt || mysqli_num_rows($kt) == 0)){
 
-            $sql = "insert into account(userName,passWord) values ('$username','$password')";
-
+            $rannum = rand(1,12);
+            $image = 'avatar'.$rannum.'.png';
+            $sql = "insert into account(userName,name,passWord,image) values ('$username','$username','$password','$image')";
+            
             if (!mysqli_query($conn,$sql)==true) {
 
                 //Đăng ký không thành công

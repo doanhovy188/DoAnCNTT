@@ -74,10 +74,20 @@ if (session_id() === '')
             <div class="profileBody">
                 <div class="logo-name">
                     <figure class="img userLogo">
-                        <img src="./images/userlogo.png" alt="">
+                        <?php 
+                            $sql = 'select image from account where userName = "'.$_SESSION["username"].'"';
+                            $record = executeSingleResult($sql)['image'];
+                            //echo $record['image'];
+                            $path = "\"./images/avatar/$record\"";
+                            echo '<img src='.$path.'>';
+                        ?>
+                        <!-- <img src="./images/userlogo.png" alt=""> -->
                         <button class="avtEdit"><i class="fas fa-edit"></i></button>
                     </figure>
-                    <?php echo '<h3>'.$_SESSION["username"]. '<i class="fas fa-pencil-alt" style="font-size:16px"></i></h3>'?>
+                    <?php 
+                    $sql = 'select name from account where userName = "'.$_SESSION["username"].'"';
+                    $record = executeSingleResult($sql)['name'];
+                    echo '<h3>'.$record. '<i class="fas fa-pencil-alt" style="font-size:16px"></i></h3>'?>
                 </div>
                 <div class="profileInfo">
                     <h3>My Record</h3>
@@ -140,13 +150,17 @@ if (session_id() === '')
                         $index = 1;
                         foreach ($record as $item) {
                             $index++;
+                            $record = $item['image'];
+                            $path = "\"./images/avatar/$record\"";
                             echo '
                                         <p>'.$item['rank'].'</p>
-                                        <p>'.$item['image'].'</p>
+                                        <figure class= "rankAvatar"  >
+                                            <img  src='.$path.'>
+                                        </figure>
                                         <p>'.$item['name'].'</p>
                                         <p>'.$item['Score'].'</p>
                                         <p>'.$item['date'].'</p>
-                                ';
+                                    ';
                         }
                     ?>
                 </div>
@@ -158,9 +172,13 @@ if (session_id() === '')
                         $index = 1;
                         foreach ($record as $item) {
                             $index++;
+                            $record = $item['image'];
+                            $path = "\"./images/avatar/$record\"";
                             echo '
                                         <p>'.$item['rank'].'</p>
-                                        <p>'.$item['image'].'</p>
+                                        <figure class= "rankAvatar" >
+                                            <img src='.$path.'>
+                                        </figure>
                                         <p>'.$item['name'].'</p>
                                         <p>'.$item['Score'].'</p>
                                         <p>'.$item['date'].'</p>
@@ -176,9 +194,13 @@ if (session_id() === '')
                         $index = 1;
                         foreach ($record as $item) {
                             $index++;
+                            $record = $item['image'];
+                            $path = "\"./images/avatar/$record\"";
                             echo '
                                         <p>'.$item['rank'].'</p>
-                                        <p>'.$item['image'].'</p>
+                                        <figure class= "rankAvatar" >
+                                            <img src='.$path.'>
+                                        </figure>
                                         <p>'.$item['name'].'</p>
                                         <p>'.$item['Score'].'</p>
                                         <p>'.$item['date'].'</p>

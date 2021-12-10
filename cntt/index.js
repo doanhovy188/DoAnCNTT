@@ -88,6 +88,7 @@ function openLogin() {
     closeRegister();
     closeNav();
     hideSlideshow();
+    hideGame();
 }
 
 function closeRegister() {
@@ -108,6 +109,7 @@ function openRegister() {
     closeLogin();
     closeNav();
     hideSlideshow();
+    hideGame();
 }
 
 function rankClick() {

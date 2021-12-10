@@ -544,6 +544,17 @@ body {
                         font-size: 22px;
                         text-align: center;
                     }
+                    .rankAvatar img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                    }
+                .rankAvatar{
+                    width:  60px;
+                    box-sizing: border-box;
+                }
+                    
+                    
                 }
 
                 // .rankTable {
