@@ -765,5 +765,16 @@ body {
         .snake{
             visibility: hidden;
         }
+
+        .avt-container {
+            margin-top: 200px;
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            grid-row-gap: 50px;
+            .avt {
+                height: 100px;
+                cursor: pointer;
+            }
+        }
     }
 }

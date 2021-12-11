@@ -804,3 +804,15 @@ body .container .g2048 {
 body .container .snake {
   visibility: hidden;
 }
+body .container .avt-container {
+  margin-top: 200px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 25% 25% 25%;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-row-gap: 50px;
+}
+body .container .avt-container .avt {
+  height: 100px;
+  cursor: pointer;
+}

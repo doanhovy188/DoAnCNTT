@@ -65,7 +65,7 @@ if (session_id() === '')
         </section>
         <section class="profileWindow" id="profileWindow" style="visibility: hidden">
             <div class="profile-header">
-                <span class="dot dot-red" onclick="closeProfile()" id="profileRedDot"></span>
+                <span class="dot dot-red" onclick="toggleProfile()" id="profileRedDot"></span>
                 <span class="dot dot-yellow"></span>
                 <span class="dot dot-green"></span>
                 <h2>Profile</h2>
@@ -82,7 +82,7 @@ if (session_id() === '')
                             echo '<img src='.$path.'>';
                         ?>
                         <!-- <img src="./images/userlogo.png" alt=""> -->
-                        <button class="avtEdit"><i class="fas fa-edit"></i></button>
+                        <button class="avtEdit" onclick="onpenEditAvt()"><i class="fas fa-edit"></i></button>
                     </figure>
                     <?php 
                     $sql = 'select name from account where userName = "'.$_SESSION["username"].'"';
@@ -224,7 +224,65 @@ if (session_id() === '')
             style="width: 550px; height: 650px; border: none; visibility: hidden"></iframe>
         <iframe id= "gsnake" class= "game snake" src="./games/snake" title="Snake"
             style="width: 1000px; height: 630px; border: none; visibility: hidden"></iframe>
+
+        <!-- <div class="avt-container" style="display: none" id="avt">
+            <form method="post">
+                <button type="submit" name="avatar1">
+                    <figure class= "avt img">
+                        <img src="./images/avatar/avatar1.png">
+                    </figure>
+                </button>
+            </form>
+            <?php
+                if(isset($_POST['avatar1'])) {
+                    try {
+                        $sql = 'update account set image="avatar1.png" where userName= "'.$_SESSION["username"].'"';
+                        execute($sql);
+                        echo "success!";
+                    }  catch (Exception $e) {
+                        echo $e;
+                    }
+                }
+                if(isset($_POST['button2'])) {
+                    echo "This is Button2 that is selected";
+                }
+            ?>
+            <figure class= "avt img">
+                <img src="./images/avatar/avatar2.png">
+            </figure>
+            <figure class= "avt img">
+                <img src="./images/avatar/avatar3.png">
+            </figure>
+            <figure class= "avt img">
+                <img src="./images/avatar/avatar4.png">
+            </figure>
+            <figure class= "avt img">
+                <img src="./images/avatar/avatar5.png">
+            </figure>
+            <figure class= "avt img">
+                <img src="./images/avatar/avatar6.png">
+            </figure>
+            <figure class= "avt img">
+                <img src="./images/avatar/avatar7.png">
+            </figure>
+            <figure class= "avt img">
+                <img src="./images/avatar/avatar8.png">
+            </figure>
+            <figure class= "avt img">
+                <img src="./images/avatar/avatar9.png">
+            </figure>
+            <figure class= "avt img">
+                <img src="./images/avatar/avatar10.png">
+            </figure>
+            <figure class= "avt img">
+                <img src="./images/avatar/avatar11.png">
+            </figure>
+            <figure class= "avt img">
+                <img src="./images/avatar/avatar12.png">
+            </figure>
+        </div>  -->
     </div>
+
     <script type="text/javascript">
         let position = document.cookie.search("usernamelogin") + 14;
         let str = document.cookie.toString().slice(position);

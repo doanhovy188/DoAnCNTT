@@ -14,6 +14,7 @@ function toggleProfile(){
 function closeProfile(){
     const profileWindow = document.getElementById("profileWindow");
     profileWindow.style.opacity = "0";
+    profileWindow.style.visibility = "hidden";
     const redDot = document.getElementById("profileRedDot");
     redDot.style.visibility = "hidden";
 }
@@ -190,7 +191,7 @@ function logout(){
 
     xmlhttp.open("GET","./php/session_destroyer.php",false);
     xmlhttp.send();
-    window.location.pathname = "DoAnCNTT/cntt/index.php"
+    window.location.pathname = "/cntt/index.php"
 }
 
 function openRecord(evt, gameName) {
@@ -229,4 +230,8 @@ function snakeClick(){
     hideSlideshow();
     hideGame();
     document.getElementById("gsnake").style.visibility = "visible";
+}
+
+function onpenEditAvt(){
+    document.getElementById("avt").style.display = "grid";
 }
