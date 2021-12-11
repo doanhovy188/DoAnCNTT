@@ -25,8 +25,8 @@ function executeResult($sql) {
 
 	//close connnection
 	mysqli_close($conn);
-
-	return $data;
+	if(isset($data))
+	return $data; else return null;
 }
 
 function executeSingleResult($sql) {

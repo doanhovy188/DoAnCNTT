@@ -149,7 +149,7 @@ function alert($message){
         </section>
         <section class="rankWindow" id="rankWindow" style="visibility: hidden">
             <div class="rank-header">
-                <span class="dot dot-red" onclick="closeProfile()" id="profileRedDot"></span>
+                <span class="dot dot-red" onclick="rankClick()" id="profileRedDot"></span>
                 <span class="dot dot-yellow"></span>
                 <span class="dot dot-green"></span>
                 <h2>Ranking</h2>

@@ -107,14 +107,23 @@ if (session_id() === '')
                             $record = executeResult($sql);
 
                             $index = 0;
-                            foreach ($record as $item) {
-                                $index++;
-                                echo '<tr>
-                                            <td>'.$item['gameName'].'</td>
-                                            <td>'.$item['Score'].'</td>
-                                            <td>'.$item['rank'].'</td>
+                            try {
+                                if($record != null)
+                                foreach ($record as $item) {
+                                    $index++;
+                                    echo '<tr>
+                                                <td>'.$item['gameName'].'</td>
+                                                <td>'.$item['Score'].'</td>
+                                                <td>'.$item['rank'].'</td>
+                                            </tr>';
+                                }} 
+                                catch(Exception $e) {
+                                    echo '<tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>';
-                            }
+                                }
                             ?>
                         </tbody>
                     </table>
@@ -123,7 +132,7 @@ if (session_id() === '')
         </section>
         <section class="rankWindow" id="rankWindow" style="visibility: hidden">
             <div class="rank-header">
-                <span class="dot dot-red" onclick="closeProfile()" id="profileRedDot"></span>
+                <span class="dot dot-red" onclick="rankClick()" id="profileRedDot"></span>
                 <span class="dot dot-yellow"></span>
                 <span class="dot dot-green"></span>
                 <h2>Ranking</h2>
