@@ -23,7 +23,7 @@ if (isset($conn)) {
             while ($row = $kt->fetch_assoc()) {
                 $ps = $row["passWord"];
             }
-            if (isset($ps) && $ps != $password) {
+            if ((isset($ps) && $ps != $password)||!isset($ps)) {
                 alert_Wrong_Input();
             } else {
                 $_SESSION['username'] = $username;
