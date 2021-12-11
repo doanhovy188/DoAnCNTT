@@ -766,15 +766,33 @@ body {
             visibility: hidden;
         }
 
-        .avt-container {
-            margin-top: 200px;
-            display: grid;
-            grid-template-columns: 25% 25% 25% 25%;
-            grid-row-gap: 50px;
+        #avt {
             .avt {
                 height: 100px;
                 cursor: pointer;
+                margin:20px 20px;
             }
+            #gridAvt{
+                padding: 20px;
+                display: none;
+                grid-template-columns: 25% 25% 25% 25%;
+                grid-row-gap: 0;
+                position: absolute;
+                z-index: 99999;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                border-radius: 50px;
+                button{
+                    border: none;
+                    background-color: white;
+                }
+            }
+
+        }
+        #nameBox{
+            display: none;
         }
     }
 }

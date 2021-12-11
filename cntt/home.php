@@ -87,7 +87,7 @@ if (session_id() === '')
                     <?php 
                     $sql = 'select name from account where userName = "'.$_SESSION["username"].'"';
                     $record = executeSingleResult($sql)['name'];
-                    echo '<h3>'.$record. '<i class="fas fa-pencil-alt" style="font-size:16px"></i></h3>'?>
+                    echo '<h3>'.$record. '<i class="fas fa-pencil-alt" style="font-size:16px" onclick="editName()"></i></h3>'?>
                 </div>
                 <div class="profileInfo">
                     <h3>My Record</h3>
@@ -225,62 +225,121 @@ if (session_id() === '')
         <iframe id= "gsnake" class= "game snake" src="./games/snake" title="Snake"
             style="width: 1000px; height: 630px; border: none; visibility: hidden"></iframe>
 
-        <!-- <div class="avt-container" style="display: none" id="avt">
-            <form method="post">
+        <div class="avt-container" id="avt">
+            <?php
+                $avt = 0;
+                $sql = 'update account set image="avatar1.png" where userName= "'.$_SESSION["username"].'"';
+                        execute($sql);
+                if(isset($_POST['avatar1'])) {
+                    $avt = 1;
+                }
+                else if(isset($_POST['avatar2'])) {
+                    $avt = 2;
+                }
+                else if(isset($_POST['avatar3'])) {
+                    $avt = 3;
+                }
+                else if(isset($_POST['avatar4'])) {
+                    $avt = 4;
+                }
+                else if(isset($_POST['avatar5'])) {
+                    $avt = 5;
+                }
+                else if(isset($_POST['avatar6'])) {
+                    $avt = 6;
+                }
+                else if(isset($_POST['avatar7'])) {
+                    $avt = 7;
+                }
+                else if(isset($_POST['avatar8'])) {
+                    $avt = 8;
+                }
+                else if(isset($_POST['avatar9'])) {
+                    $avt = 9;
+                }
+                else if(isset($_POST['avatar10'])) {
+                    $avt = 10;
+                }
+                else if(isset($_POST['avatar11'])) {
+                    $avt = 11;
+                }
+                else if(isset($_POST['avatar12'])) {
+                    $avt = 12;
+                }
+                if ($avt!=0){
+                    try{
+                        $sql = 'update account set image="avatar'.$avt.'.png" where userName= "'.$_SESSION["username"].'"';
+                        execute($sql);
+                    } catch (Exception $e){ echo $e;}
+                }
+            ?>
+            <form method="post" id= "gridAvt">
                 <button type="submit" name="avatar1">
                     <figure class= "avt img">
                         <img src="./images/avatar/avatar1.png">
                     </figure>
                 </button>
+                <button type="submit" name="avatar2">
+                    <figure class= "avt img">
+                        <img src="./images/avatar/avatar2.png">
+                    </figure>
+                </button>
+                <button type="submit" name="avatar3">
+                    <figure class= "avt img">
+                        <img src="./images/avatar/avatar3.png">
+                    </figure>
+                </button>
+                <button type="submit" name="avatar4">
+                    <figure class= "avt img">
+                        <img src="./images/avatar/avatar4.png">
+                    </figure>
+                </button>
+                <button type="submit" name="avatar5">
+                    <figure class= "avt img">
+                        <img src="./images/avatar/avatar5.png">
+                    </figure>
+                </button>
+                <button type="submit" name="avatar6">
+                    <figure class= "avt img">
+                        <img src="./images/avatar/avatar6.png">
+                    </figure>
+                </button>
+                <button type="submit" name="avatar7">
+                    <figure class= "avt img">
+                        <img src="./images/avatar/avatar7.png">
+                    </figure>
+                </button>
+                <button type="submit" name="avatar8">
+                    <figure class= "avt img">
+                        <img src="./images/avatar/avatar8.png">
+                    </figure>
+                </button>
+                <button type="submit" name="avatar9">
+                    <figure class= "avt img">
+                        <img src="./images/avatar/avatar9.png">
+                    </figure>
+                </button>
+                <button type="submit" name="avatar10">
+                    <figure class= "avt img">
+                        <img src="./images/avatar/avatar10.png">
+                    </figure>
+                </button>
+                <button type="submit" name="avatar11">
+                    <figure class= "avt img">
+                        <img src="./images/avatar/avatar11.png">
+                    </figure>
+                </button>
+                <button type="submit" name="avatar12">
+                    <figure class= "avt img">
+                        <img src="./images/avatar/avatar12.png">
+                    </figure>
+                </button>
             </form>
-            <?php
-                if(isset($_POST['avatar1'])) {
-                    try {
-                        $sql = 'update account set image="avatar1.png" where userName= "'.$_SESSION["username"].'"';
-                        execute($sql);
-                        echo "success!";
-                    }  catch (Exception $e) {
-                        echo $e;
-                    }
-                }
-                if(isset($_POST['button2'])) {
-                    echo "This is Button2 that is selected";
-                }
-            ?>
-            <figure class= "avt img">
-                <img src="./images/avatar/avatar2.png">
-            </figure>
-            <figure class= "avt img">
-                <img src="./images/avatar/avatar3.png">
-            </figure>
-            <figure class= "avt img">
-                <img src="./images/avatar/avatar4.png">
-            </figure>
-            <figure class= "avt img">
-                <img src="./images/avatar/avatar5.png">
-            </figure>
-            <figure class= "avt img">
-                <img src="./images/avatar/avatar6.png">
-            </figure>
-            <figure class= "avt img">
-                <img src="./images/avatar/avatar7.png">
-            </figure>
-            <figure class= "avt img">
-                <img src="./images/avatar/avatar8.png">
-            </figure>
-            <figure class= "avt img">
-                <img src="./images/avatar/avatar9.png">
-            </figure>
-            <figure class= "avt img">
-                <img src="./images/avatar/avatar10.png">
-            </figure>
-            <figure class= "avt img">
-                <img src="./images/avatar/avatar11.png">
-            </figure>
-            <figure class= "avt img">
-                <img src="./images/avatar/avatar12.png">
-            </figure>
-        </div>  -->
+        </div> 
+        <div id= "nameBox">
+            <p>New nickname:</p>
+            <input type="text" id="newName" name="newName">
+        </div>
     </div>
 
     <script type="text/javascript">
@@ -312,7 +371,7 @@ if (session_id() === '')
             data = e.data;
             console.log(data);
             var xmlHttp = new XMLHttpRequest();  //not the cross browser way of doing it
-            xmlHttp.open("GET", "http://localhost:8080/cntt/php/update.php?username=" + username + "&idgame=" + data[0] + "&score=" + data[1], true);
+            xmlHttp.open("GET", "http://localhost/DoAnCNTT/cntt/php/update.php?username=" + username + "&idgame=" + data[0] + "&score=" + data[1], true);
             xmlHttp.send(null);
         });
     </script>

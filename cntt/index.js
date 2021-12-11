@@ -233,5 +233,10 @@ function snakeClick(){
 }
 
 function onpenEditAvt(){
-    document.getElementById("avt").style.display = "grid";
+    console.log("avatareditclicked");
+    document.getElementById("gridAvt").style.display = "grid";
+}
+
+function editName(){
+    document.getElementById("nameBox").style.display = "block";
 }
