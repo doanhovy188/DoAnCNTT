@@ -292,11 +292,12 @@ if (session_id() === '')
             </form>
         </div> 
         <div id= "nameBox">
+            <div id= "btnCloseEditName" onclick="closeEditName()">X</div>
             <form id= "nameBox-form" action="./php/updateName.php" method="post">
                 <p>New nickname:</p>
                 <input type="hidden" value="<?php echo $_SESSION["username"]?>" name="username">
                 <input type="text" id="newName" name="newName">
-                <input type="submit">
+                <input type="submit" id="submitBtn">
             </form>
         </div>
     </div>

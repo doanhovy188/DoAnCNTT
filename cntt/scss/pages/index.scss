@@ -812,7 +812,49 @@ body {
 
         }
         #nameBox{
+            position: absolute;
+            box-sizing: border-box;
+            z-index: 99999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             display: none;
+            background-color: white;
+            width: 300px;
+            height: 130px;
+            border-radius: 30px;
+            color: #707974;
+            font-family: 'Maven Pro', sans-serif;
+            padding: 20px;
+            #btnCloseEditName{
+                position: absolute;
+                top: 10%;
+                right: 8%;
+            }
+            #newName{
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                height: 25px;
+                border: 2px solid #707974;
+            }
+            input{
+                font-family: 'Maven Pro', sans-serif;
+                color: #707974;
+                padding-left: 10px;
+            }
+            #newName:focus{
+                border: 2px solid #707974;
+            }
+            #submitBtn{
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                height: 30px;
+                background-color: #707974;
+                font-family: 'Maven Pro', sans-serif;
+                color: white;
+                border: none;
+                width: 60px;
+            }
         }
     }
 }
