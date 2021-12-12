@@ -240,29 +240,3 @@ function onpenEditAvt(){
 function editName(){
     document.getElementById("nameBox").style.display = "block";
 }
-
-function autoScore(username, idgame, score) {
-    var form = document.createElement("form");
-    var element1 = document.createElement("input"); 
-    var element2 = document.createElement("input"); 
-    var element3 = document.createElement("input"); 
-
-    form.method = "POST";
-    form.action = "./php/update.php";   
-
-    element1.value=username;
-    element1.name="username";
-    form.appendChild(element1);  
-
-    element2.value=idgame;
-    element2.name="idgame";
-    form.appendChild(element2);  
-
-    element2.value=score;
-    element2.name="score";
-    form.appendChild(element3);
-
-    document.body.appendChild(form);
-
-    form.submit();
-}

@@ -307,8 +307,10 @@ if (session_id() === '')
         console.log(str);
 
         let position1 = str.search(";");
-
-        var username = str.slice(0, position1);
+        if(position1 != -1) {
+            var username = str.slice(0, position1);
+        } else username = str;
+        
         console.log(username);
 
         var data = -1;
@@ -330,10 +332,8 @@ if (session_id() === '')
             data = e.data;
             console.log(data);
             var xmlHttp = new XMLHttpRequest();  //not the cross browser way of doing it
-            xmlHttp.open("GET", "http://localhost/DoAnCNTT/cntt/php/update.php?username=" + username + "&idgame=" + data[0] + "&score=" + data[1], true);
+            xmlHttp.open("GET", "http://localhost:8080/cntt/php/update.php?username=" + username + "&idgame=" + data[0] + "&score=" + data[1], true);
             xmlHttp.send(null);
-            if(data[0] === null)
-            autoScore(username, data[0], data[1]);
         });
     </script>
 </body>

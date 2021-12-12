@@ -98,7 +98,7 @@ function alert($message){
                 </figure>
 
                 <label for="registerUname" class="label"><b>Username</b></label>
-                <input type="text" pattern=".{8,25}" title="8 to 25 characters" placeholder="Enter Username" name="userNameRegister" id="registerUname" class="input" required>
+                <input type="text" pattern=".{5,25}" title="5 to 25 characters" placeholder="Enter Username" name="userNameRegister" id="registerUname" class="input" required>
             
                 <label for="registerPsw" class="label"><b>Password</b></label>
                 <input type="password" pattern=".{8,16}" title="8 to 16 characters" placeholder="Enter Password" name="pswRegister" id="registerPsw" class="input" required>
@@ -123,7 +123,7 @@ function alert($message){
                 </figure>
 
                 <label for="loginUname" class="label"><b>Username:</b></label>
-                <input type="text" pattern=".{8,25}" title="8 to 25 characters" placeholder="Enter Username" name="username" id="loginUname" class="input" required>
+                <input type="text" pattern=".{5,25}" title="5 to 25 characters" placeholder="Enter Username" name="username" id="loginUname" class="input" required>
             
                 <label for="loginPsw" class="label"><b>Password:</b></label>
                 <input type="password" pattern=".{8,16}" title="8 to 16 characters" placeholder="Enter Password" name="psw" id="loginPsw" class="input" required>

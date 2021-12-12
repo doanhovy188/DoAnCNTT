@@ -15,12 +15,12 @@ class Pipe{
 
     load() {
         let pipes = ["pink","orange","red","blue","green","yellow","gray"];
-        this.upimg=new Image;
+        this.upimg=new Image();
         let upPipe = pipes[Math.floor(Math.random() * 7)];
-        this.upimg.src=("./images/" + upPipe + "up.png");
-        this.downimg=new Image;
+        this.upimg.src=("./images/" + upPipe + "Up.png");
+        this.downimg=new Image();
         let downPipe = pipes[Math.floor(Math.random() * 7)];
-        this.downimg.src=("./images/" + downPipe + "down.png");
+        this.downimg.src=("./images/" + downPipe + "Down.png");
         console.log(upPipe,downPipe);
     }
 
