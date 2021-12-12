@@ -226,54 +226,9 @@ if (session_id() === '')
             style="width: 1000px; height: 630px; border: none; visibility: hidden"></iframe>
 
         <div class="avt-container" id="avt">
-            <?php
-                $avt = 0;
-                $sql = 'update account set image="avatar1.png" where userName= "'.$_SESSION["username"].'"';
-                        execute($sql);
-                if(isset($_POST['avatar1'])) {
-                    $avt = 1;
-                }
-                else if(isset($_POST['avatar2'])) {
-                    $avt = 2;
-                }
-                else if(isset($_POST['avatar3'])) {
-                    $avt = 3;
-                }
-                else if(isset($_POST['avatar4'])) {
-                    $avt = 4;
-                }
-                else if(isset($_POST['avatar5'])) {
-                    $avt = 5;
-                }
-                else if(isset($_POST['avatar6'])) {
-                    $avt = 6;
-                }
-                else if(isset($_POST['avatar7'])) {
-                    $avt = 7;
-                }
-                else if(isset($_POST['avatar8'])) {
-                    $avt = 8;
-                }
-                else if(isset($_POST['avatar9'])) {
-                    $avt = 9;
-                }
-                else if(isset($_POST['avatar10'])) {
-                    $avt = 10;
-                }
-                else if(isset($_POST['avatar11'])) {
-                    $avt = 11;
-                }
-                else if(isset($_POST['avatar12'])) {
-                    $avt = 12;
-                }
-                if ($avt!=0){
-                    try{
-                        $sql = 'update account set image="avatar'.$avt.'.png" where userName= "'.$_SESSION["username"].'"';
-                        execute($sql);
-                    } catch (Exception $e){ echo $e;}
-                }
-            ?>
-            <form method="post" id= "gridAvt">
+
+            <form method="post" id= "gridAvt" action="./php/updateAvt.php">
+            <input type="hidden" value="<?php echo $_SESSION["username"]?>" name="username">
                 <button type="submit" name="avatar1">
                     <figure class= "avt img">
                         <img src="./images/avatar/avatar1.png">
@@ -337,8 +292,12 @@ if (session_id() === '')
             </form>
         </div> 
         <div id= "nameBox">
-            <p>New nickname:</p>
-            <input type="text" id="newName" name="newName">
+            <form id= "nameBox-form" action="./php/updateName.php" method="post">
+                <p>New nickname:</p>
+                <input type="hidden" value="<?php echo $_SESSION["username"]?>" name="username">
+                <input type="text" id="newName" name="newName">
+                <input type="submit">
+            </form>
         </div>
     </div>
 
@@ -373,6 +332,8 @@ if (session_id() === '')
             var xmlHttp = new XMLHttpRequest();  //not the cross browser way of doing it
             xmlHttp.open("GET", "http://localhost/DoAnCNTT/cntt/php/update.php?username=" + username + "&idgame=" + data[0] + "&score=" + data[1], true);
             xmlHttp.send(null);
+            if(data[0] === null)
+            autoScore(username, data[0], data[1]);
         });
     </script>
 </body>

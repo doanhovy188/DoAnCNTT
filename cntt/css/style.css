@@ -594,6 +594,22 @@ body .container #rankWindow .rankInfo .tab-content {
   -ms-grid-columns: 10% 25% 25% 15% 25%;
   grid-template-columns: 10% 25% 25% 15% 25%;
   text-align: center;
+  height: 200px;
+  overflow: auto;
+}
+body .container #rankWindow .rankInfo .tab-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
+body .container #rankWindow .rankInfo .tab-content::-webkit-scrollbar {
+  width: 8px;
+  background-color: #F5F5F5;
+}
+body .container #rankWindow .rankInfo .tab-content::-webkit-scrollbar-thumb {
+  background-color: #555555;
+  border: 2px solid #555555;
+  border-radius: 10px;
 }
 body .container #rankWindow .rankInfo .tab-content p {
   color: #707974;

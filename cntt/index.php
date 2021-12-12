@@ -134,13 +134,10 @@ function alert($message){
         <section class="slideshow" id="slideshow">
             <div class="gallery">
                 <div class="gallery-container">
-                <img class="gallery-item gallery-item-1" src="./images/game/maxresdefault.jpg"
-                        data-index="1">
+                    <img class="gallery-item gallery-item-1" src="./images/game/maxresdefault.jpg" data-index="1">
                     <img class="gallery-item gallery-item-2" src="./images/game/paperPlane.jpg" data-index="2" onclick="flappyBirdClick()">
                     <img class="gallery-item gallery-item-3" src="./images/game/2048.jpg" data-index="3" onclick="game2048Click()">
-                    <img class="gallery-item gallery-item-4"
-                        src="./images/game/snake.jpg"
-                        data-index="4" onclick="snakeClick()">
+                    <img class="gallery-item gallery-item-4" src="./images/game/snake.jpg" data-index="4" onclick="snakeClick()">
                     <img class="gallery-item gallery-item-5" src="./images/game/tro-choi-pacman.jpg" data-index="5">
                 </div>
                 <div class="gallery-controls"></div>
