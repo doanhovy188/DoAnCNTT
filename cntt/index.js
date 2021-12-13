@@ -1,3 +1,36 @@
+var songNumber = 1;
+function changeMusic(){
+    var mainSound = document.getElementById("mainSound");
+    switch (songNumber)
+    {
+        case 1 :
+            mainSound.src = "./sound/main/song4.mp3";
+            break;
+        case 2 :
+            mainSound.src = "./sound/main/song3.mp3";
+            break;
+        case 3 :
+            mainSound.src = "./sound/main/song2.mp3";
+            break;
+        case 4 :
+            mainSound.src = "./sound/main/song1.mp3";
+            break;
+        case 5 :
+            mainSound.src = "./sound/main/song6.mp3";
+            break;
+        case 6 :
+            mainSound.src = "./sound/main/song5.mp3";
+            songNumber = 0;
+            break;
+        default: 
+            mainSound.src = "./sound/main/song5.mp3";
+            break;        
+    }
+    songNumber++;
+    mainSound.pause();
+    mainSound.load();
+    mainSound.play();
+}
 function loadPage(){
 }
 function toggleProfile(){
@@ -137,39 +170,7 @@ function muteBtnClick() {
         muteIcon.src = "./images/mutedIcon.png"
     }
 }
-var audio = document.getElementById("mainSound");
-var songNumber = 1;
-audio.addEventListener('ended',function(){
-    switch (songNumber)
-    {
-        case 1 :
-            audio.src = "./sound/main/song4.mp3";
-            break;
-        case 2 :
-            audio.src = "./sound/main/song3.mp3";
-            break;
-        case 3 :
-            audio.src = "./sound/main/song2.mp3";
-            break;
-        case 4 :
-            audio.src = "./sound/main/song1.mp3";
-            break;
-        case 5 :
-            audio.src = "./sound/main/song6.mp3";
-            break;
-        case 6 :
-            audio.src = "./sound/main/song5.mp3";
-            songNumber = 0;
-            break;
-        default: 
-            audio.src = "./sound/main/song5.mp3";
-            break;        
-    }
-        songNumber++;
-        audio.pause();
-        audio.load();
-        audio.play();
-    });
+
 
 function checkLogin(){
     const userName = document.getElementById("loginUname").value;

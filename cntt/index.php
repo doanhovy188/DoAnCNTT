@@ -76,7 +76,7 @@ function alert($message){
                 <img src="./images/unMuteIcon.png" alt="" id="muteIcon">
             </figure>
             <span class="option"  onclick="openNav()"><i class="fas fa-stream"></i></span>
-            <audio id="mainSound" autoplay>
+            <audio id="mainSound" autoplay onended= "changeMusic()">
                 <source src="./sound/main/song5.mp3">
             </audio>
         </div>
